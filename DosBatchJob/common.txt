@@ -1,0 +1,137 @@
+REM ####################################
+REM # run a batch file in a batch file
+REM # if the batch file being called is not existed. error :"The system cannot find the path specified."
+REM #"$BJ_JAVA_HOME\bin\java" -mx256m -classpath "$BJ_CLASSPATH:$CLASSPATH" com.hsbcprivatebank.efos.global.util.dts.app.batchjob.core.BatchJobEngine "$1" "$2"
+REM ####################################
+REM # parameter 1 = execution task instance name
+REM # parameter 2 = (OPTIONAL) running mode = re-run / schedule
+REM # parameter 3 = (OPTIONAL) schedule job name = required in schedule mode
+REM ####################################
+SET tmpClassPath= %CLASSPATH%
+echo %BJ_CLASSPATH%;%CLASSPATH%
+SET CLASSPATH=%BJ_CLASSPATH%;%CLASSPATH%
+ECHO CALL %BJ_JAVA_HOME%\bin\java -mx256m com.hsbcprivatebank.efos.global.util.dts.app.batchjob.core.BatchJobEngine %1 %2 %3
+CALL "%BJ_JAVA_HOME%\bin\java" -mx256m com.hsbcprivatebank.efos.global.util.dts.app.batchjob.core.BatchJobEngine %1 %2 %3
+
+REM ####################################
+REM #Pause execution
+REM ####################################
+Pause
+
+REM ####################################
+REM #Show Port occupation by which process
+REM ####################################
+netstat -a -b
+
+REM ####################################
+REM #IF statement - 
+REM #%1 is the parameter when call the batch e.g. setupMQ.bat [QueueManager]
+REM #%errorlevel% is the return code after executing the batch file
+REM ####################################
+@echo off
+IF "%1." == "?."  GOTO HELP
+IF "%1." == "/?." GOTO HELP
+IF "%1." == "-?." GOTO HELP
+IF "%1." == "." GOTO HELP
+IF %errorlevel% == 0 ECHO process successfully 
+:HELP
+ECHO.
+ECHO To run scripts to setup MQ, enter the command
+ECHO.
+ECHO Usage   : setupMQ.bat [QueueManager]
+ECHO.
+
+@echo off
+dir c:
+rem 退出代码为>=1就跳至标题1处执行，>=0就跳至标题0处执行
+IF ERRORLEVEL 1 goto 1
+IF ERRORLEVEL 0 goto 0
+Rem 上面的两行不可交换位置，否则失败了也显示成功。
+:0
+echo 命令执行成功！
+Rem 程序执行完毕跳至标题exit处退出
+goto exit
+:1
+echo 命令执行失败！
+Rem 程序执行完毕跳至标题exit处退出
+goto exit
+:exit
+pause
+
+@echo off
+rem 如果集中包含通配符，则指定与目录名匹配，而不与文件名匹配。
+for /d %%i in (c:\\*) do echo %%i
+
+@echo off
+for /d %%i in (???) do echo %%i
+
+@echo off
+for /d %%i in (window?) do echo %%i
+
+pause
+
+rem 单点（.）枚举目录树，单点代表当前目录，也可视为一个文件。
+@echo off
+for /r c:\\ %%i in (*.exe) do echo %%i
+pause
+
+@echo off
+for /r %%i in (*.exe) do @echo %%i
+pause
+
+@echo off
+for /r c:\\ %%i in (boot.ini) do echo %%i
+pause
+
+@echo off
+for /r c:\\ %%i in (boot.ini) do if exist %%i echo %%i
+pause
+
+@echo off
+setlocal enabledelayedexpansion
+for /l %%i in (1,1,5) do (
+set a=%%i
+echo !a!
+)
+pause
+
+REM ##############################################################
+REM #Copy network file. Restart at the break point
+REM ##############################################################
+copy /z "\\136.51.149.168\db_backup\Backup\EFOSIN.0.DB2.NODE0000.CATN0000.20101007070017.001" C:\
+
+REM ##############################################################
+REM #Run as 
+REM ##############################################################
+c:\windows\system32\runas.exe /user:HBAP\43325669 c:\config.bat
+
+REM ##############################################################
+REM #目录 Directory
+REM ##############################################################
+rem 单点（.） 单点代表当前目录，也可视为一个文件。
+rem 两点（..）两点代表上一级目录。 e.g. ..\.. 为上两级目录
+rem \ 代表根目录. e.g. copy license.txt \
+
+REM ##############################################################
+REM #Extract a Substring by Position
+REM ##############################################################
+echo.Date   : %date%
+echo.Weekday: %date:~0,3%
+echo.Month  : %date:~4,2%
+echo.Day    : %date:~7,2%
+echo.Year   : %date:~10,4%
+
+Reference:
+http://www.dostips.com/
+
+REM ##############################################################
+REM #create batch file which starts a program and after 20 minutes will close the program and start it again
+REM ##############################################################
+
+@echo off                           //Turn off screen text messages
+:loop                               //Set marker called loop, to return to
+start "Wicked_Article_Creator" "C:\Wicked Article Creator\Wicked Article Creator.exe"  //Start program, with title and program path 
+timeout /t 1200 >null               //Wait 20 minutes
+taskkill /f /im "Image Name" >nul   //Image name, e.g. WickedArticleCreator.exe, can be found via Task Manager > Processes Tab > Image Name column (look for your program)
+timeout /t 7 >null                  //Wait 7 seconds to give your prgram time to close fully - (optional)
+goto loop                           //Return to loop marker
