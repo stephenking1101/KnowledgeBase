@@ -43,23 +43,23 @@ ECHO.
 
 @echo off
 dir c:
-rem �˳�����Ϊ>=1����������1��ִ�У�>=0����������0��ִ��
+rem 退出代码为>=1就跳至标题1处执行，>=0就跳至标题0处执行
 IF ERRORLEVEL 1 goto 1
 IF ERRORLEVEL 0 goto 0
-Rem ��������в��ɽ���λ�ã�����ʧ����Ҳ��ʾ�ɹ���
+Rem 上面的两行不可交换位置，否则失败了也显示成功。
 :0
-echo ����ִ�гɹ���
-Rem ����ִ�������������exit���˳�
+echo 命令执行成功！
+Rem 程序执行完毕跳至标题exit处退出
 goto exit
 :1
-echo ����ִ��ʧ�ܣ�
-Rem ����ִ�������������exit���˳�
+echo 命令执行失败！
+Rem 程序执行完毕跳至标题exit处退出
 goto exit
 :exit
 pause
 
 @echo off
-rem ������а���ͨ�������ָ����Ŀ¼��ƥ�䣬�������ļ���ƥ�䡣
+rem 如果集中包含通配符，则指定与目录名匹配，而不与文件名匹配。
 for /d %%i in (c:\\*) do echo %%i
 
 @echo off
@@ -70,7 +70,7 @@ for /d %%i in (window?) do echo %%i
 
 pause
 
-rem ���㣨.��ö��Ŀ¼�������������ǰĿ¼��Ҳ����Ϊһ���ļ���
+rem 单点（.）枚举目录树，单点代表当前目录，也可视为一个文件。
 @echo off
 for /r c:\\ %%i in (*.exe) do echo %%i
 pause
@@ -106,11 +106,11 @@ REM ##############################################################
 c:\windows\system32\runas.exe /user:HBAP\43325669 c:\config.bat
 
 REM ##############################################################
-REM #Ŀ¼ Directory
+REM #目录 Directory
 REM ##############################################################
-rem ���㣨.�� ���������ǰĿ¼��Ҳ����Ϊһ���ļ���
-rem ���㣨..�����������һ��Ŀ¼�� e.g. ..\.. Ϊ������Ŀ¼
-rem \ ������Ŀ¼. e.g. copy license.txt \
+rem 单点（.） 单点代表当前目录，也可视为一个文件。
+rem 两点（..）两点代表上一级目录。 e.g. ..\.. 为上两级目录
+rem \ 代表根目录. e.g. copy license.txt \
 
 REM ##############################################################
 REM #Extract a Substring by Position
@@ -135,3 +135,67 @@ timeout /t 1200 >null               //Wait 20 minutes
 taskkill /f /im "Image Name" >nul   //Image name, e.g. WickedArticleCreator.exe, can be found via Task Manager > Processes Tab > Image Name column (look for your program)
 timeout /t 7 >null                  //Wait 7 seconds to give your prgram time to close fully - (optional)
 goto loop                           //Return to loop marker
+
+REM ##############################################################
+REM #net use
+REM ##############################################################
+
+作用：连接计算机或断开计算机与共享资源的连接，或显示计算机的连接信息。
+
+格式：net use devicename | *\\computername\sharename \volume password | */user:domainname\username /delete | /persistent: yer | no
+
+参数：（1）键入不带参数的net use列出网络连接。
+
+（2）devicename指定要连接到的资源名称或要断开的设备名称。
+
+（3）\\computername\sharename服务器及共享资源的名称。
+
+例：（1）net use \\192.168.18.8\ipc$ "zxcasd" /user:"itcso1" 注释：用户是itcso1，密码是zxcasd，对方IP为192.168.18.8
+
+（2）net use \\192.168.18.8\ipc$ /delete 注释：退出IPC连接
+
+REM ##############################################################
+REM #net user
+REM ##############################################################
+
+作用：添加或更改用户账号或显示用户账号信息。
+
+格式：net user username password | *options/domain
+
+参数：（1）键入不带参数的net user查看计算机上的用户账号列表。
+
+（2）user name添加、删除、更改或查看用户账号名。
+
+（3）password为用户账号分配或更改密码。
+
+（4）*提示输入密码。
+
+（5）/domain在计算机主域的主域控制器中执行操作。
+
+例：
+
+net user itcsox itcso818 /add注释：添加新的用户名itcsox，密码为itcso818 
+net user abc /domain
+
+REM ##############################################################
+REM #Clear DNS cache on local PC
+REM ##############################################################
+ipconfig /flushdns
+
+REM ##############################################################
+REM #Change Folder Permission
+REM ##############################################################
+cacls "C:\Program Files\IBM\SDP" /E /T /C /G "BUILTIN\Users":C
+cacls "C:\runtimes\wp61-on-was7" /E /T /C /G "BUILTIN\Users":C 
+
+REM ##############################################################
+REM #Add user to Administrotors Group
+REM ##############################################################
+在启动时按F8进入命令模式创建了一个普通用户
+--> 按F8创建一普通用户，既是管理员密码忘了，如何还能进F8的命令行模式，难不成f8进去时就是一普能用户，在普通用户上面又建了另一个普通用户
+
+普通用户登陆之后，用“net localgroup administrators 用户名 /add ”把“用户”添加到管理员中,但出现提示为“发生系统错误 5，拒绝访问”
+--> 普通用户就是没权限管理管理员的事的用户，楼主偏要去做这个
+
+请问如何更改管理员密码，并把这个普通用户添加到管理员中？（最好用命令）
+--> 不一定非要PE盘，普通用户登录后，直接登录提权不一样，直接copy c:\windows\system32\cmd.exe sethc.exe /y，注销后输administrator，密码处按住shift不就弹出超级管理员的命令行界面了
