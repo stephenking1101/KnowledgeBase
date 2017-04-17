@@ -1,0 +1,13 @@
+###########stop/start application server#####################
+sudo -u wasadm /opt/WebSphere85/profiles/dmgrprofile/bin/wsadmin.sh -f ./g3-was-stop.jython hkgv3ls0930 DASG3W0101UK -lang jython
+
+sudo -u wasadm /opt/WebSphere85/profiles/dmgrprofile/bin/wsadmin.sh -f ./g3-was-stop.jython hkgv3ls0930 DASJAZ0101UK -lang jython
+
+sudo -u wasadm /opt/WebSphere85/profiles/dmgrprofile/bin/wsadmin.sh -f ./g3-was-stop.jython hkgv3ls0930 DASJTS0101UK -lang jython
+
+sudo -u wasadm /opt/WebSphere85/profiles/dmgrprofile/bin/wsadmin.sh -f ./g3-was-start.jython hkgv3ls0930 DASJTS0101UK -lang jython
+
+sudo -u wasadm /opt/WebSphere85/profiles/dmgrprofile/bin/wsadmin.sh -f ./g3-was-start.jython hkgv3ls0930 DASJAZ0101UK -lang jython
+
+sudo -u wasadm /opt/WebSphere85/profiles/dmgrprofile/bin/wsadmin.sh -f ./g3-was-start.jython hkgv3ls0930 DASG3W0101UK -lang jython
+

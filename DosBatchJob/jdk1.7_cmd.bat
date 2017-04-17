@@ -1,0 +1,2 @@
+cmd /k "set JAVA_HOME=C:\backup\Software\jdk\1.7.0_79_64bit&&set PATH=C:\backup\Software\jdk\1.7.0_79_64bit\bin;%PATH%"
+@start cmd /k "set JAVA_HOME=C:\backup\Software\jdk\1.7.0_79_64bit && set PATH=C:\backup\Software\jdk\1.7.0_79_64bit\bin;%PATH%"

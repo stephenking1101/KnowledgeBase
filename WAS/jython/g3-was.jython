@@ -1,0 +1,74 @@
+
+
+
+
+###################################
+### NOT USED left for reference ###
+###################################
+
+
+
+
+
+
+
+
+
+import sys
+import os
+
+## WAS properties/values ##
+cellName    = 'wascell' # cell is as per standard
+appName     = sys.argv[0]
+nodeName    = sys.argv[1] 
+serverName  = sys.argv[2]
+vhName      = sys.argv[3]
+clusterName = sys.argv[4]
+path        = sys.argv[5]
+
+print 'Params appName "%s" nodeName "%s" serverName "%s" vhName "%s" clusterName "%s" path "%s"' %(appName, nodeName, serverName, vhName, clusterName, path)
+            
+#Find the WAR file in the path
+for f in os.listdir(path):
+   if f.find('war') != -1:
+      print "Found war "+f
+      earLoc=path+'/'+f
+
+print 'Using war '+earLoc
+
+appMgr = AdminControl.queryNames('WebSphere:cell='+cellName+',node='+nodeName+',type=ApplicationManager,process='+serverName+',*')
+
+installedApps = AdminApp.list()
+
+# Traverse the app names and check if the appname exists
+for app in installedApps.split("\n"):
+   if appName == app:
+     print "Located: " + app
+
+# Only update, don't install new, just in case
+arg = ["-update", "-node", nodeName, "-server", serverName, "-appname",appName, "-cluster", clusterName, "-MapModulesToServers", [['.*', '.*', serverName]] , "-MapWebModToVH", [[ '.*', '.*', vhName  ]] ]
+
+print "Stopping server " + serverName
+
+try:
+   #AdminControl.invoke(appMgr,'stopApplication',appName)
+   AdminControl.stopServer(serverName, nodeName)
+   print "Stopped"
+except:
+   # Get the exception info and convert the Exception Value object to a string
+   exceptionInfo = sys.exc_info()[1].toString()
+
+   # Search for specific stings
+   if exceptionInfo.find("WASX7252E") != -1:
+      print 'WARNING : The server [' + serverName + '] is already stopped on node [' + nodeName + '] or cannot locate the server'
+   else:
+      print 'ERROR : ' + exceptionInfo
+      sys.exit(1)
+
+print "Updating app "+appName
+AdminApp.install(earLoc, arg)
+AdminConfig.save()
+
+print "Starting server "+serverName
+AdminControl.startServer(serverName, nodeName)
+print "Started"

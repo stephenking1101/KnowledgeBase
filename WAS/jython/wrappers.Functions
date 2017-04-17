@@ -1,0 +1,23 @@
+#!/bin/bash
+
+getPath() {
+  cmd=$1
+
+  [[ $# -le 0 ]] && {
+    echo "No linux command/utility name passed to validate its binary path."
+    return 1
+  }
+
+  path=`which $cmd`
+  path=${path:=`whereis -b $cmd | tr -s " " "\n" | grep "^/" | grep bin | head -1`}
+  if [[ ! -z "$path" ]]
+  then
+     echo $path
+     return 0
+  else
+     echo "Path for linux command/utility [$cmd] not found."
+     return 2
+  fi
+}
+
+

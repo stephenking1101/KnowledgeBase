@@ -1,0 +1,24 @@
+import sys
+import os
+
+## WAS properties/values ##
+nodeName    = sys.argv[0] 
+serverName  = sys.argv[1]
+
+print 'Params nodeName "%s" serverName"%s"' %(nodeName, serverName)
+            
+print "Starting server "+serverName
+
+try:
+   AdminControl.startServer(serverName, nodeName)
+   print "Started"
+except:
+   # Get the exception info and convert the Exception Value object to a string
+   exceptionInfo = sys.exc_info()[1].toString()
+
+   # Search for specific stings
+   if exceptionInfo.find("WASX7252E") != -1:
+      print 'WARNING : The server [' + serverName + '] is already stopped on node [' + nodeName + '] or cannot locate the server'
+   else:
+      print 'ERROR : ' + exceptionInfo
+      sys.exit(1)

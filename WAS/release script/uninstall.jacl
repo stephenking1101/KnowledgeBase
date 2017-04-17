@@ -1,0 +1,8 @@
+
+puts "prepare unintall EAR"
+$AdminApp uninstall DocExpressEAR
+
+puts "prepare save the change"
+$AdminConfig save
+
+

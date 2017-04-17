@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------------------------------
+wasadm@HKRMCP01:/opt/WebSphere70/AppServer/profiles/dmgrprofile02/properties> ls soap.client.props
+soap.client.props 
+
+#com.ibm.SOAP.loginUserid=
+#com.ibm.SOAP.loginPassword=
+
+/rmc_was/WebSphere70/AppServer/profiles/dmgrprofile02/bin/serverStatus.sh -all
+
+--------------------------------------------------------------------------------------------------------
+Check the soap port in <profile folder>/<cell>/<node>/serverindex.xml
+
+The server apdas082 is reachable on the target server tkdp2csmdas10 from port number 8895.
+Please modify the connect option in the application.properties to include the port number as well and retry the deployment.
+
+E.g : default.connectOptions='-conntype SOAP -port 8895'
+
+./wsadmin.sh -lang jython -connect SOAP -port 8895
+wsadmin>cellName="apdas082cell"
+wsadmin>nodeName="apdas082node"
+wsadmin>serverName="apdas082"
+wsadmin>appManager=AdminControl.queryNames('cell=%s,node=%s,type=ApplicationManager,process=%s,*' % (cellName,nodeName,serverName))
+wsadmin>print appManager
+
+--------------------------------------------------------------------------------------------------------

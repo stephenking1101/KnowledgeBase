@@ -1,0 +1,14 @@
+
+puts "prepare install EAR"
+$AdminApp install DocExpress.ear { -MapWebModToVH {{ .* .* uasdex02hk_host }} -node HK000MTY1151 -cell wascell -server UASDEX02HK}
+
+puts "prepare save the change"
+$AdminConfig save
+
+set result [$AdminApp isAppReady DocExpressEAR]
+while {$result == "false"} {
+   ### Wait 120 seconds before checking again
+   after 120000
+   set result [$AdminApp isAppReady DocExpressEAR]
+}
+puts "application can start now"

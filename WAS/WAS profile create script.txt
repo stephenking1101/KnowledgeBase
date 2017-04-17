@@ -1,0 +1,5 @@
+REM create profile
+wasprofile.bat -create -profileName eCRMESProfile -profilePath "C:\Program Files\IBM\Rational\SDP\6.0"\runtimes\base_v6\profiles\eCRMESProfile -templatePath "C:\Program Files\IBM\Rational\SDP\6.0"\runtimes\base_v6\profileTemplates\default -nodeName eCRMESNode01 -cellName eCRMESCell01 -hostName dev.uae -serverName eCRMESServer01 -winserviceCheck false
+
+REM delete profile
+wasprofile.bat -delete -profileName eCRMESProfile
