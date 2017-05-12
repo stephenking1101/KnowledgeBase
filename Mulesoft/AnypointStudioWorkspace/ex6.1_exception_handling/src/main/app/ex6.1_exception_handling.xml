@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:cluster="http://www.mulesoft.org/schema/mule/ee/cluster" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8088" doc:name="HTTP Listener Configuration"/>
+    <spring:beans>
+        <spring:bean id="DerbyDB" name="DerbyDB" class="org.enhydra.jdbc.standard.StandardDataSource">
+            <spring:property name="driverName" value="org.apache.derby.jdbc.ClientDriver"/>
+            <spring:property name="url" value="jdbc:derby://localhost:1527//javashop"/>
+        </spring:bean>
+    </spring:beans>
+    <db:derby-config name="Derby_Configuration" dataSource-ref="DerbyDB" doc:name="Derby Configuration"/>
+    <configuration defaultExceptionStrategy-ref="ex6.1_exception_handlingChoice_Exception_Strategy" doc:name="Configuration">
+        <http:config useTransportForUris="false"/>
+    </configuration>
+    <choice-exception-strategy name="ex6.1_exception_handlingChoice_Exception_Strategy">
+        <catch-exception-strategy doc:name="Catch SQL Exception" when="#[exception.causedBy(java.sql.SQLDataException)]">
+            <set-payload value="SQL Exception Found" doc:name="Set Payload"/>
+            <set-property propertyName="http.status" value="400" doc:name="Property"/>
+            <logger level="INFO" doc:name="Logger" message="#[exception.getDetailedMessage()] #['\n' + exception]"/>
+        </catch-exception-strategy>
+        <catch-exception-strategy doc:name="No Record Exception" when="#[exception.causedBy(java.sql.SQLException)]">
+            <set-payload value="No Record Found" doc:name="Set Payload"/>
+            <set-property propertyName="http.status" value="501" doc:name="Property"/>
+            <logger level="INFO" doc:name="Logger" message="#[exception.getDetailedMessage()] #['\n' + exception]"/>
+        </catch-exception-strategy>
+    </choice-exception-strategy>
+    <flow name="ex6.1_exception_handlingFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/music" allowedMethods="GET" doc:name="HTTP"/>
+        <db:select config-ref="Derby_Configuration" doc:name="Database">
+            <db:parameterized-query><![CDATA[select * from Music_Recordings where RECORDING_ID = #[message.inboundProperties.'http.query.params'.ID]]]></db:parameterized-query>
+        </db:select>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+    </flow>
+</mule>

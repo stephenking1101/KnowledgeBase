@@ -1,0 +1,82 @@
+#%RAML 0.8
+baseUri: https://anypoint.systems.uk.hsbc/raml-mocking-service-site/mocks/76152bee-4804-4577-a5a3-5c92657720e9
+title: MusicRecording_Training
+version: 1.0
+
+/music:
+  get:
+      queryParameters:
+        category: 
+          enum: [Classical, Modern]
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                [{
+                   "TITLE": "Nutcracker",
+                   "PRICE": 9.99,
+                   "NUM_TRACKS": 15,
+                   "IMAGE_NAME": "tchaikovsky_nutcracker.gif",
+                   "STOCK_COUNT": 0,
+                   "CATEGORY": "Classical",
+                   "ARTIST_NAME": "Tchaikovsky",
+                   "RECORDING_ID": 2004
+                },
+                {
+                   "TITLE": "Test",
+                   "PRICE": 20.3,
+                   "NUM_TRACKS": 12,
+                   "IMAGE_NAME": "tchaikovsky_nutcracker.gif",
+                   "STOCK_COUNT": 1,
+                   "CATEGORY": "Classical",
+                   "ARTIST_NAME": "Tchaikovsky",
+                   "RECORDING_ID": 2014
+                }]
+
+
+  post:
+    body:
+      application/json:
+        example: |
+          {
+             "TITLE": "Nutcracker",
+             "PRICE": 9.99,
+             "NUM_TRACKS": 15,
+             "IMAGE_NAME": "tchaikovsky_nutcracker.gif",
+             "STOCK_COUNT": 0,
+             "CATEGORY": "Classical",
+             "ARTIST_NAME": "Tchaikovsky",
+             "RECORDING_ID": 2004
+          }
+
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                “message": “Music recording is added successfully”
+              }
+                
+  
+  
+  /{ID}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                   "TITLE": "Nutcracker",
+                   "PRICE": 9.99,
+                   "NUM_TRACKS": 15,
+                   "IMAGE_NAME": "tchaikovsky_nutcracker.gif",
+                   "STOCK_COUNT": 0,
+                   "CATEGORY": "Classical",
+                   "ARTIST_NAME": "Tchaikovsky",
+                   "RECORDING_ID": 2004
+                }
+
+    

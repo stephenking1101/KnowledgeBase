@@ -1,0 +1,237 @@
+2017-04-19 17:16:58,398 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ex3.3_build_and_implement'             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 17:16:58,672 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-19 17:16:58,786 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-19 17:16:58,944 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-19 17:16:58,944 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-19 17:16:59,031 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@76a36b71: startup date [Wed Apr 19 17:16:59 CST 2017]; root of context hierarchy
+2017-04-19 17:17:01,187 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-19 17:17:02,287 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-19 17:17:02,982 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-19 17:17:02,988 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: music-main
+2017-04-19 17:17:02,990 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[class org.mule.module.apikit.exception.NotFoundException]}
+2017-04-19 17:17:02,995 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[class org.mule.module.apikit.exception.MethodNotAllowedException]}
+2017-04-19 17:17:02,995 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[class org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+2017-04-19 17:17:02,995 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[class org.mule.module.apikit.exception.NotAcceptableException]}
+2017-04-19 17:17:02,995 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[class org.mule.module.apikit.exception.BadRequestException]}
+2017-04-19 17:17:03,029 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: music-main.stage1
+2017-04-19 17:17:03,043 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: music-console
+2017-04-19 17:17:03,043 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@32a2a6be
+2017-04-19 17:17:03,052 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: music-console.stage1
+2017-04-19 17:17:03,056 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/music:music-config
+2017-04-19 17:17:03,056 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4ceff87d
+2017-04-19 17:17:03,063 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/music:music-config.stage1
+2017-04-19 17:17:03,064 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/music/{ID}:music-config
+2017-04-19 17:17:03,064 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@65bad087
+2017-04-19 17:17:03,070 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/music/{ID}:music-config.stage1
+2017-04-19 17:17:03,070 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: post:/music:music-config
+2017-04-19 17:17:03,070 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@58af5076
+2017-04-19 17:17:03,077 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: post:/music:music-config.stage1
+2017-04-19 17:17:03,102 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-tx-log\tx2.log
+2017-04-19 17:17:03,119 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-xa-tx-log\tx2.log
+2017-04-19 17:17:04,472 [main] INFO  org.mule.module.apikit.Configuration - Building resource URI cache...
+2017-04-19 17:17:04,739 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\music.xml'}]"
+2017-04-19 17:17:04,739 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\music.xml'}]"
+2017-04-19 17:17:07,768 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ex3.3_build_and_implement'                 +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 17:17:07,771 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-19 17:17:07,771 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-19 17:17:07,871 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-19 17:17:07,875 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 17:17:07,879 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-19 17:17:07,880 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: music-main
+2017-04-19 17:17:07,881 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: music-main.stage1
+2017-04-19 17:17:07,909 [main] INFO  org.mule.module.apikit.Configuration - 
+********************************************************************************
+* APIKit Console URL: http://127.0.0.1:8088/console                            *
+********************************************************************************
+2017-04-19 17:17:07,909 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: music-console
+2017-04-19 17:17:07,910 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: music-console.stage1
+2017-04-19 17:17:07,930 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/music:music-config
+2017-04-19 17:17:07,930 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/music:music-config.stage1
+2017-04-19 17:17:07,932 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/music/{ID}:music-config
+2017-04-19 17:17:07,932 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/music/{ID}:music-config.stage1
+2017-04-19 17:17:07,936 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: post:/music:music-config
+2017-04-19 17:17:07,936 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: post:/music:music-config.stage1
+2017-04-19 17:17:07,986 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-19 17:17:08,014 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ex3.3_build_and_implement                             *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-04-19 17:23:59,677 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ex3.3_build_and_implement'             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 17:23:59,927 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-19 17:24:00,070 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-19 17:24:00,278 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-19 17:24:00,278 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-19 17:24:00,398 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@63c5efee: startup date [Wed Apr 19 17:24:00 CST 2017]; root of context hierarchy
+2017-04-19 17:24:02,666 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-19 17:24:03,165 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-04-19 17:24:03,813 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-19 17:24:04,442 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-19 17:24:04,447 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: ex3.2_connect_to_databaseFlow
+2017-04-19 17:24:04,447 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@9c73fff
+2017-04-19 17:24:04,466 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: ex3.2_connect_to_databaseFlow.stage1
+2017-04-19 17:24:04,814 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: music-main
+2017-04-19 17:24:04,814 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[class org.mule.module.apikit.exception.NotFoundException]}
+2017-04-19 17:24:04,815 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[class org.mule.module.apikit.exception.MethodNotAllowedException]}
+2017-04-19 17:24:04,815 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[class org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+2017-04-19 17:24:04,815 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[class org.mule.module.apikit.exception.NotAcceptableException]}
+2017-04-19 17:24:04,815 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[class org.mule.module.apikit.exception.BadRequestException]}
+2017-04-19 17:24:04,832 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: music-main.stage1
+2017-04-19 17:24:04,833 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: music-console
+2017-04-19 17:24:04,833 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@83bb0f
+2017-04-19 17:24:04,839 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: music-console.stage1
+2017-04-19 17:24:04,842 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/music:music-config
+2017-04-19 17:24:04,842 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5482bcac
+2017-04-19 17:24:04,846 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/music:music-config.stage1
+2017-04-19 17:24:04,846 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/music/{ID}:music-config
+2017-04-19 17:24:04,846 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@16a5c7e4
+2017-04-19 17:24:04,850 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/music/{ID}:music-config.stage1
+2017-04-19 17:24:04,851 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: post:/music:music-config
+2017-04-19 17:24:04,851 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4dcbae55
+2017-04-19 17:24:04,854 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: post:/music:music-config.stage1
+2017-04-19 17:24:04,872 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-tx-log\tx2.log
+2017-04-19 17:24:04,888 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-xa-tx-log\tx2.log
+2017-04-19 17:24:06,010 [main] INFO  org.mule.module.apikit.Configuration - Building resource URI cache...
+2017-04-19 17:24:06,109 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\ex3.2_connect_to_database.xml'}, ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\music.xml'}]"
+2017-04-19 17:24:06,109 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\ex3.2_connect_to_database.xml'}, ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\music.xml'}]"
+2017-04-19 17:24:09,135 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ex3.3_build_and_implement'                 +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 17:24:09,137 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-19 17:24:09,137 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-19 17:24:09,209 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-19 17:24:09,214 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 17:24:09,218 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-19 17:24:09,221 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: ex3.2_connect_to_databaseFlow
+2017-04-19 17:24:09,221 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: ex3.2_connect_to_databaseFlow.stage1
+2017-04-19 17:24:09,229 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: music-main
+2017-04-19 17:24:09,229 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: music-main.stage1
+2017-04-19 17:24:09,250 [main] INFO  org.mule.module.apikit.Configuration - 
+********************************************************************************
+* APIKit Console URL: http://127.0.0.1:8088/console                            *
+********************************************************************************
+2017-04-19 17:24:09,251 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: music-console
+2017-04-19 17:24:09,251 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: music-console.stage1
+2017-04-19 17:24:09,277 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/music:music-config
+2017-04-19 17:24:09,277 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/music:music-config.stage1
+2017-04-19 17:24:09,283 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/music/{ID}:music-config
+2017-04-19 17:24:09,283 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/music/{ID}:music-config.stage1
+2017-04-19 17:24:09,287 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: post:/music:music-config
+2017-04-19 17:24:09,287 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: post:/music:music-config.stage1
+2017-04-19 17:24:09,368 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-19 17:24:09,422 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ex3.3_build_and_implement                             *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-04-20 09:51:16,586 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ex3.3_build_and_implement'             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 09:51:18,533 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-20 09:51:19,703 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-20 09:51:20,375 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-20 09:51:20,375 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-20 09:51:21,255 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@63c5efee: startup date [Thu Apr 20 09:51:21 CST 2017]; root of context hierarchy
+2017-04-20 09:51:31,218 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-20 09:51:32,600 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-04-20 09:51:33,688 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-20 09:51:38,259 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-20 09:51:38,263 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: ex3.2_connect_to_databaseFlow
+2017-04-20 09:51:38,263 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@9c73fff
+2017-04-20 09:51:38,366 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: ex3.2_connect_to_databaseFlow.stage1
+2017-04-20 09:51:40,052 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: music-main
+2017-04-20 09:51:40,054 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[class org.mule.module.apikit.exception.NotFoundException]}
+2017-04-20 09:51:40,054 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[class org.mule.module.apikit.exception.MethodNotAllowedException]}
+2017-04-20 09:51:40,054 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[class org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+2017-04-20 09:51:40,054 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[class org.mule.module.apikit.exception.NotAcceptableException]}
+2017-04-20 09:51:40,054 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[class org.mule.module.apikit.exception.BadRequestException]}
+2017-04-20 09:51:40,217 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: music-main.stage1
+2017-04-20 09:51:40,218 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: music-console
+2017-04-20 09:51:40,219 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@83bb0f
+2017-04-20 09:51:40,223 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: music-console.stage1
+2017-04-20 09:51:40,226 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/music:music-config
+2017-04-20 09:51:40,226 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5482bcac
+2017-04-20 09:51:40,231 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/music:music-config.stage1
+2017-04-20 09:51:40,231 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/music/{ID}:music-config
+2017-04-20 09:51:40,232 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@16a5c7e4
+2017-04-20 09:51:40,235 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/music/{ID}:music-config.stage1
+2017-04-20 09:51:40,236 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: post:/music:music-config
+2017-04-20 09:51:40,236 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4dcbae55
+2017-04-20 09:51:40,239 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: post:/music:music-config.stage1
+2017-04-20 09:51:40,352 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-tx-log\tx2.log
+2017-04-20 09:51:40,487 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.3_build_and_implement\queue-xa-tx-log\tx2.log
+2017-04-20 09:51:45,629 [main] INFO  org.mule.module.apikit.Configuration - Building resource URI cache...
+2017-04-20 09:51:46,233 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\ex3.2_connect_to_database.xml'}, ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\music.xml'}]"
+2017-04-20 09:51:46,233 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\ex3.2_connect_to_database.xml'}, ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.3_build_and_implement\music.xml'}]"
+2017-04-20 09:51:49,583 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ex3.3_build_and_implement'                 +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 09:51:49,585 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-20 09:51:49,585 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-20 09:51:50,380 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-20 09:51:50,383 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 09:51:50,388 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-20 09:51:50,392 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: ex3.2_connect_to_databaseFlow
+2017-04-20 09:51:50,392 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: ex3.2_connect_to_databaseFlow.stage1
+2017-04-20 09:51:50,419 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: music-main
+2017-04-20 09:51:50,419 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: music-main.stage1
+2017-04-20 09:51:50,510 [main] INFO  org.mule.module.apikit.Configuration - 
+********************************************************************************
+* APIKit Console URL: http://127.0.0.1:8088/console                            *
+********************************************************************************
+2017-04-20 09:51:50,511 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: music-console
+2017-04-20 09:51:50,511 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: music-console.stage1
+2017-04-20 09:51:50,564 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/music:music-config
+2017-04-20 09:51:50,564 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/music:music-config.stage1
+2017-04-20 09:51:50,567 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/music/{ID}:music-config
+2017-04-20 09:51:50,567 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/music/{ID}:music-config.stage1
+2017-04-20 09:51:50,571 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: post:/music:music-config
+2017-04-20 09:51:50,571 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: post:/music:music-config.stage1
+2017-04-20 09:51:50,782 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-20 09:51:50,809 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ex3.3_build_and_implement                             *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************

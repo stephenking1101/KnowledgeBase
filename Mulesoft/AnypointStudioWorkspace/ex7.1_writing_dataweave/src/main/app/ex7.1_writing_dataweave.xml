@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8088" doc:name="HTTP Listener Configuration"/>
+    <flow name="ex7.1_writing_dataweaveFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/music" allowedMethods="POST" doc:name="HTTP"/>
+        <dw:transform-message metadata:id="7330e1a7-1a2c-4755-b3e5-6d3e1756e1c2" doc:name="Transform Message">
+            <dw:input-payload doc:sample="C:\backup\Technical Knowledge\Mulesoft\MAF\Exercise\Ex7.1\music-example.json"/>
+            <dw:set-payload resource="classpath:json_music.dwl"/>
+            <dw:set-variable variableName="xml"><![CDATA[%dw 1.0
+%output application/xml
+---
+data: {
+	place: "China",
+	artist @(category:payload.CATEGORY):
+	{
+		name:payload.ARTIST_NAME
+	}
+}]]></dw:set-variable>
+        </dw:transform-message>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>

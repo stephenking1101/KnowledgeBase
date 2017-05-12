@@ -1,0 +1,11 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "music_json"
+        }
+    },
+    "outputMessageMetadata": {},
+    "id": "7330e1a7-1a2c-4755-b3e5-6d3e1756e1c2",
+    "version": "5.2.0.0"
+}

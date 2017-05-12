@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8088" doc:name="HTTP Listener Configuration"/>
+    <spring:beans>
+        <spring:bean id="DerbyDB" name="DerbyDB" class="org.enhydra.jdbc.standard.StandardDataSource">
+            <spring:property name="driverName" value="org.apache.derby.jdbc.ClientDriver"/>
+            <spring:property name="url" value="jdbc:derby://localhost:1527//javashop"/>
+        </spring:bean>
+    </spring:beans>
+    <db:derby-config name="Derby_Configuration" dataSource-ref="DerbyDB" doc:name="Derby Configuration"/>
+    <flow name="testFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/music" allowedMethods="GET" doc:name="HTTP"/>
+        <set-variable variableName="category" value="#[message.inboundProperties.'http.query.params'.category]" doc:name="categoryVariable"/>
+        <choice doc:name="Choice">
+            <when expression="#[flowVars.category.equals('Classical')]">
+                <flow-ref name="getClassicalMusic" doc:name="getClassicalMusic"/>
+            </when>
+            <when expression="#[flowVars.category.equals('Rock')]">
+                <flow-ref name="getModernMusic" doc:name="getModernMusic"/>
+            </when>
+            <otherwise>
+                <logger level="INFO" doc:name="Logger"/>
+            </otherwise>
+        </choice>
+        <logger level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="getClassicalMusic">
+        <db:select config-ref="Derby_Configuration" doc:name="Database">
+            <db:parameterized-query><![CDATA[select * from Music_Recordings where category='Classical']]></db:parameterized-query>
+        </db:select>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <logger level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="getModernMusic">
+        <db:select config-ref="Derby_Configuration" doc:name="Database">
+            <db:parameterized-query><![CDATA[select * from Music_Recordings where category=#[flowVars.category]]]></db:parameterized-query>
+        </db:select>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <logger level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>

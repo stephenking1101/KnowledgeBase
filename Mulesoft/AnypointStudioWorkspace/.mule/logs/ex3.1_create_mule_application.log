@@ -1,0 +1,46 @@
+2017-04-19 15:37:55,827 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ex3.1_create_mule_application'         +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 15:37:56,452 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-19 15:37:56,593 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-19 15:37:56,749 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-19 15:37:56,749 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-19 15:37:56,905 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@2a65bb85: startup date [Wed Apr 19 15:37:56 CST 2017]; root of context hierarchy
+2017-04-19 15:37:59,229 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-19 15:38:00,244 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-19 15:38:01,181 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-19 15:38:01,181 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: ex3.1_create_mule_applicationFlow
+2017-04-19 15:38:01,181 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@421def93
+2017-04-19 15:38:01,259 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: ex3.1_create_mule_applicationFlow.stage1
+2017-04-19 15:38:01,306 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.1_create_mule_application\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.1_create_mule_application\queue-tx-log\tx2.log
+2017-04-19 15:38:01,337 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.1_create_mule_application\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex3.1_create_mule_application\queue-xa-tx-log\tx2.log
+2017-04-19 15:38:01,728 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.1_create_mule_application\ex3.1_create_mule_application.xml'}]"
+2017-04-19 15:38:01,728 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex3.1_create_mule_application\ex3.1_create_mule_application.xml'}]"
+2017-04-19 15:38:05,051 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ex3.1_create_mule_application'             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 15:38:05,051 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-19 15:38:05,051 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-19 15:38:05,177 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-19 15:38:05,177 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-19 15:38:05,177 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-19 15:38:05,177 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: ex3.1_create_mule_applicationFlow
+2017-04-19 15:38:05,177 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: ex3.1_create_mule_applicationFlow.stage1
+2017-04-19 15:38:05,271 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-19 15:38:05,286 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ex3.1_create_mule_application                         *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************

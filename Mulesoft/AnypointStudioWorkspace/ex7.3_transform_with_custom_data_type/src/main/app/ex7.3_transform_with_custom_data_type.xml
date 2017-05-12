@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8088" doc:name="HTTP Listener Configuration"/>
+    <flow name="ex7.3_transform_with_custom_data_typeFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/music" allowedMethods="POST" doc:name="HTTP"/>
+        <dw:transform-message metadata:id="cd31c5a0-d335-440a-8c61-8cbab6f26dfe" doc:name="Transform Message">
+            <dw:input-payload doc:sample="C:\backup\Technical Knowledge\Mulesoft\MAF\Exercise\Ex7.3\music-example-XML.xml"/>
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+%namespace ns0 http://training.HTG.com/
+%type currency = :string{format:"###.00"}
+%type music = :object{class:"com.htg.training.MusicRecording"}
+---
+music:payload.ns0#listAllMusicRecording.*return map
+{
+	title:$.TITLE,
+	price:$.PRICE as :number as :currency,
+	numberOfTracks:$.NUM_TRACKS,
+	image:$.IMAGE_NAME,
+	stockCount:$.STOCK_COUNT,
+	artistName:$.ARTIST_NAME,
+	recordingID:$.RECORDING_ID,
+	category:$.@category
+} as :music]]></dw:set-payload>
+        </dw:transform-message>
+        <logger message="#[payload.music.get(0).creationDate]" level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>

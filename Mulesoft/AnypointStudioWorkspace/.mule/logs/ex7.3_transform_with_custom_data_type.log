@@ -1,0 +1,382 @@
+2017-04-21 14:34:47,937 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ex7.3_transform_with_custom_data_type' +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:34:48,182 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-21 14:34:48,320 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-21 14:34:48,502 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-21 14:34:48,502 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-21 14:34:48,611 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@452ba1db: startup date [Fri Apr 21 14:34:48 CST 2017]; root of context hierarchy
+2017-04-21 14:34:51,393 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-21 14:34:54,873 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-21 14:34:56,380 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-21 14:34:56,385 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:34:56,386 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4d157493
+2017-04-21 14:34:56,621 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:34:56,680 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-tx-log\tx2.log
+2017-04-21 14:34:57,050 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-xa-tx-log\tx2.log
+2017-04-21 14:34:57,900 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex7.3_transform_with_custom_data_type\ex7.3_transform_with_custom_data_type.xml'}]"
+2017-04-21 14:34:57,900 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex7.3_transform_with_custom_data_type\ex7.3_transform_with_custom_data_type.xml'}]"
+2017-04-21 14:35:01,194 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ex7.3_transform_with_custom_data_type'     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:35:01,197 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-21 14:35:01,197 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-21 14:35:01,539 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-21 14:35:01,542 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:35:01,545 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-21 14:35:01,546 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:35:01,547 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:35:01,877 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-21 14:35:01,896 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ex7.3_transform_with_custom_data_type                 *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-04-21 14:37:09,777 [[ex7.3_transform_with_custom_data_type].HTTP_Listener_Configuration.worker.01] ERROR org.mule.exception.DefaultMessagingExceptionStrategy - 
+********************************************************************************
+Message               : Exception while executing: 
+<?xml version='1.0' encoding='GBK'?>
+^
+Unexpected character '<' at index 0 (line 1, position 1), expected JSON Value
+Payload               : com.mulesoft.weave.reader.DefaultSeekableStream@7d1b1ce8
+Element               : /ex7.3_transform_with_custom_data_typeFlow/processors/0 @ ex7.3_transform_with_custom_data_type:ex7.3_transform_with_custom_data_type.xml:13 (Transform Message)
+Element XML           : <dw:transform-message metadata:id="cd31c5a0-d335-440a-8c61-8cbab6f26dfe" doc:name="Transform Message">
+                        <dw:input-payload doc:sample="C:\backup\Technical Knowledge\Mulesoft\MAF\Exercise\Ex7.3\music-example-XML.xml"></dw:input-payload>
+                        <dw:set-payload>%dw 1.0%output application/java%namespace ns0 http://training.HTG.com/%type currency = :string{format:"###.00"}%type music = :object{class:"com.htg.training.MusicRecording"}---music:payload.ns0#listAllMusicRecording.*return map{title:$.TITLE,price:$.PRICE as :number as :currency,numberOfTracks:$.NUM_TRACKS,image:$.IMAGE_NAME,stockCount:$.STOCK_COUNT,artistName:$.ARTIST_NAME,recordingID:$.RECORDING_ID,category:$.@category} as :music</dw:set-payload>
+                        </dw:transform-message>
+--------------------------------------------------------------------------------
+Root Exception stack trace:
+com.mulesoft.weave.reader.json.JsonReaderException: Unexpected character '<' at index 0 (line 1, position 1), expected JSON Value
+	at com.mulesoft.weave.reader.json.JsonTokenizer.fail(JsonTokenizer.scala:193)
+	at com.mulesoft.weave.reader.json.JsonTokenizer.readValue(JsonTokenizer.scala:49)
+	at com.mulesoft.weave.reader.json.JsonTokenizer.tokens(JsonTokenizer.scala:16)
+	at com.mulesoft.weave.reader.json.JsonReader.root(JsonReader.scala:17)
+	at com.mulesoft.weave.mule.reader.ReusableReader.root(ReusableReader.scala:12)
+	at com.mulesoft.weave.engine.EvaluationContext$InternalExecutionContext$$anonfun$3.apply(EvaluationContext.scala:106)
+	at com.mulesoft.weave.engine.EvaluationContext$InternalExecutionContext$$anonfun$3.apply(EvaluationContext.scala:103)
+	at scala.collection.immutable.Map$Map1.foreach(Map.scala:116)
+	at com.mulesoft.weave.engine.EvaluationContext$InternalExecutionContext.<init>(EvaluationContext.scala:103)
+	at com.mulesoft.weave.engine.EvaluationContext$.apply(EvaluationContext.scala:192)
+	at com.mulesoft.weave.engine.Engine.execute(Engine.scala:86)
+	at com.mulesoft.weave.engine.Engine.execute(Engine.scala:103)
+	at com.mulesoft.weave.mule.ImmediateWeaveExecutorStrategy$$anonfun$execute$1.apply(ImmediateWeaveExecutorStrategy.scala:27)
+	at com.mulesoft.weave.mule.ImmediateWeaveExecutorStrategy$$anonfun$execute$1.apply(ImmediateWeaveExecutorStrategy.scala:25)
+	at scala.Option.map(Option.scala:146)
+	at com.mulesoft.weave.mule.ImmediateWeaveExecutorStrategy.execute(ImmediateWeaveExecutorStrategy.scala:25)
+	at com.mulesoft.weave.mule.WeaveMessageProcessor.execute(WeaveMessageProcessor.scala:117)
+	at com.mulesoft.weave.mule.WeaveMessageProcessor.process(WeaveMessageProcessor.scala:65)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:88)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.processor.AsyncInterceptingMessageProcessor.process(AsyncInterceptingMessageProcessor.java:102)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.construct.DynamicPipelineMessageProcessor.process(DynamicPipelineMessageProcessor.java:55)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:88)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.interceptor.AbstractEnvelopeInterceptor.processBlocking(AbstractEnvelopeInterceptor.java:58)
+	at org.mule.processor.AbstractRequestResponseMessageProcessor.process(AbstractRequestResponseMessageProcessor.java:47)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.processor.AbstractFilteringMessageProcessor.process(AbstractFilteringMessageProcessor.java:52)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.processor.AbstractRequestResponseMessageProcessor.processBlocking(AbstractRequestResponseMessageProcessor.java:56)
+	at org.mule.processor.AbstractRequestResponseMessageProcessor.process(AbstractRequestResponseMessageProcessor.java:47)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:88)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.construct.AbstractPipeline$3.process(AbstractPipeline.java:232)
+	at org.mule.module.http.internal.listener.HttpMessageProcessorTemplate.routeEvent(HttpMessageProcessorTemplate.java:73)
+	at org.mule.execution.AsyncResponseFlowProcessingPhase$1.process(AsyncResponseFlowProcessingPhase.java:72)
+	at org.mule.execution.AsyncResponseFlowProcessingPhase$1.process(AsyncResponseFlowProcessingPhase.java:59)
+	at org.mule.execution.ExecuteCallbackInterceptor.execute(ExecuteCallbackInterceptor.java:16)
+	at org.mule.execution.CommitTransactionInterceptor.execute(CommitTransactionInterceptor.java:35)
+	at org.mule.execution.CommitTransactionInterceptor.execute(CommitTransactionInterceptor.java:22)
+	at org.mule.execution.HandleExceptionInterceptor.execute(HandleExceptionInterceptor.java:30)
+	at org.mule.execution.HandleExceptionInterceptor.execute(HandleExceptionInterceptor.java:14)
+	at org.mule.execution.BeginAndResolveTransactionInterceptor.execute(BeginAndResolveTransactionInterceptor.java:67)
+	at org.mule.execution.ResolvePreviousTransactionInterceptor.execute(ResolvePreviousTransactionInterceptor.java:44)
+	at org.mule.execution.SuspendXaTransactionInterceptor.execute(SuspendXaTransactionInterceptor.java:50)
+	at org.mule.execution.ValidateTransactionalStateInterceptor.execute(ValidateTransactionalStateInterceptor.java:40)
+	at org.mule.execution.IsolateCurrentTransactionInterceptor.execute(IsolateCurrentTransactionInterceptor.java:41)
+	at org.mule.execution.ExternalTransactionInterceptor.execute(ExternalTransactionInterceptor.java:48)
+	at org.mule.execution.RethrowExceptionInterceptor.execute(RethrowExceptionInterceptor.java:28)
+	at org.mule.execution.RethrowExceptionInterceptor.execute(RethrowExceptionInterceptor.java:13)
+	at org.mule.execution.TransactionalErrorHandlingExecutionTemplate.execute(TransactionalErrorHandlingExecutionTemplate.java:110)
+	at org.mule.execution.AsyncResponseFlowProcessingPhase.runPhase(AsyncResponseFlowProcessingPhase.java:58)
+	at org.mule.execution.AsyncResponseFlowProcessingPhase.runPhase(AsyncResponseFlowProcessingPhase.java:35)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.phaseSuccessfully(PhaseExecutionEngine.java:65)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.phaseSuccessfully(PhaseExecutionEngine.java:69)
+	at com.mulesoft.mule.throttling.ThrottlingPhase.runPhase(ThrottlingPhase.java:186)
+	at com.mulesoft.mule.throttling.ThrottlingPhase.runPhase(ThrottlingPhase.java:57)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.phaseSuccessfully(PhaseExecutionEngine.java:65)
+	at com.mulesoft.gateway.http.phases.GatewayValidationPhase.runPhase(GatewayValidationPhase.java:93)
+	at com.mulesoft.gateway.http.phases.GatewayValidationPhase.runPhase(GatewayValidationPhase.java:49)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.phaseSuccessfully(PhaseExecutionEngine.java:65)
+	at org.mule.modules.cors.CorsPhase.runPhase(CorsPhase.java:113)
+	at org.mule.modules.cors.CorsPhase.runPhase(CorsPhase.java:40)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.process(PhaseExecutionEngine.java:114)
+	at org.mule.execution.PhaseExecutionEngine.process(PhaseExecutionEngine.java:41)
+	at org.mule.execution.MuleMessageProcessingManager.processMessage(MuleMessageProcessingManager.java:32)
+	at org.mule.module.http.internal.listener.DefaultHttpListener$1.handleRequest(DefaultHttpListener.java:133)
+	at org.mule.module.http.internal.listener.grizzly.GrizzlyRequestDispatcherFilter.handleRead(GrizzlyRequestDispatcherFilter.java:83)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:526)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy.run0(ExecutorPerServerAddressIOStrategy.java:102)
+	at org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy.access$100(ExecutorPerServerAddressIOStrategy.java:30)
+	at org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy$WorkerThreadRunnable.run(ExecutorPerServerAddressIOStrategy.java:125)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+********************************************************************************
+
+2017-04-21 14:37:23,930 [[ex7.3_transform_with_custom_data_type].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Fri Apr 21 14:37:23 CST 2017
+2017-04-21 14:37:23,932 [[ex7.3_transform_with_custom_data_type].HTTP_Listener_Configuration.worker.01] WARN  org.mule.module.http.internal.listener.HttpResponseBuilder - Payload is a Map which will be used to generate an url encoded http body but Contenty-Type specified is application/java and not application/x-www-form-urlencoded
+2017-04-21 14:39:28,758 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ex7.3_transform_with_custom_data_type' +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:39:29,147 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-21 14:39:29,333 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-21 14:39:29,533 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-21 14:39:29,533 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-21 14:39:29,646 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@30669dac: startup date [Fri Apr 21 14:39:29 CST 2017]; root of context hierarchy
+2017-04-21 14:39:31,893 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-21 14:39:33,349 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-21 14:39:34,459 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-21 14:39:34,463 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:39:34,463 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@77a2688d
+2017-04-21 14:39:34,510 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:39:34,541 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-tx-log\tx2.log
+2017-04-21 14:39:34,558 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-xa-tx-log\tx2.log
+2017-04-21 14:39:34,881 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex7.3_transform_with_custom_data_type\ex7.3_transform_with_custom_data_type.xml'}]"
+2017-04-21 14:39:34,881 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex7.3_transform_with_custom_data_type\ex7.3_transform_with_custom_data_type.xml'}]"
+2017-04-21 14:39:37,916 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ex7.3_transform_with_custom_data_type'     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:39:37,918 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-21 14:39:37,918 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-21 14:39:37,996 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-21 14:39:38,000 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:39:38,002 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-21 14:39:38,004 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:39:38,005 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:39:38,064 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-21 14:39:38,093 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ex7.3_transform_with_custom_data_type                 *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-04-21 14:40:32,750 [pool-5-thread-1] INFO  com.mulesoft.mule.debugger.commands.LoadInnerFieldsCommand - Load Inner Fields From : FieldPath{name='payload', orderedPathElements=[com.mulesoft.mule.debugger.response.FieldNode@65d47dd4]}
+2017-04-21 14:41:59,811 [pool-5-thread-1] INFO  com.mulesoft.mule.debugger.commands.LoadInnerFieldsCommand - Load Inner Fields From : FieldPath{name='payload', orderedPathElements=[com.mulesoft.mule.debugger.response.FieldNode@317d1425, com.mulesoft.mule.debugger.response.FieldNode@2ed1b263]}
+2017-04-21 14:42:37,360 [pool-5-thread-1] INFO  com.mulesoft.mule.debugger.commands.LoadInnerFieldsCommand - Load Inner Fields From : FieldPath{name='payload', orderedPathElements=[com.mulesoft.mule.debugger.response.FieldNode@499c630f, com.mulesoft.mule.debugger.response.FieldNode@29da62e4, com.mulesoft.mule.debugger.response.FieldNode@3424793a]}
+2017-04-21 14:42:41,533 [pool-5-thread-1] INFO  com.mulesoft.mule.debugger.commands.LoadInnerFieldsCommand - Load Inner Fields From : FieldPath{name='payload', orderedPathElements=[com.mulesoft.mule.debugger.response.FieldNode@3abe3b13, com.mulesoft.mule.debugger.response.FieldNode@2755ddec, com.mulesoft.mule.debugger.response.FieldNode@374f9bc4]}
+2017-04-21 14:42:48,155 [pool-5-thread-1] INFO  com.mulesoft.mule.debugger.commands.LoadInnerFieldsCommand - Load Inner Fields From : FieldPath{name='payload', orderedPathElements=[com.mulesoft.mule.debugger.response.FieldNode@b0b463c, com.mulesoft.mule.debugger.response.FieldNode@3137692b, com.mulesoft.mule.debugger.response.FieldNode@145e881d]}
+2017-04-21 14:43:19,880 [[ex7.3_transform_with_custom_data_type].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Fri Apr 21 14:41:06 CST 2017
+2017-04-21 14:43:19,923 [[ex7.3_transform_with_custom_data_type].HTTP_Listener_Configuration.worker.01] WARN  org.mule.module.http.internal.listener.HttpResponseBuilder - Payload is a Map which will be used to generate an url encoded http body but Contenty-Type specified is application/java and not application/x-www-form-urlencoded
+2017-04-21 14:46:13,671 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Stopping app 'ex7.3_transform_with_custom_data_type'     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:13,680 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Stopping flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:46:13,682 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Stopping service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:46:13,689 [[ex7.3_transform_with_custom_data_type].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Fri Apr 21 14:46:13 CST 2017
+2017-04-21 14:46:13,817 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping model: _muleSystemModel
+2017-04-21 14:46:13,822 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Stopped listener on http://0.0.0.0:8088
+2017-04-21 14:46:13,823 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopping ResourceManager
+2017-04-21 14:46:13,824 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopped ResourceManager
+2017-04-21 14:46:13,829 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing app 'ex7.3_transform_with_custom_data_type'    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:13,830 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2017-04-21 14:46:13,832 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:46:13,833 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:46:13,846 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2017-04-21 14:46:14,197 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@30669dac: startup date [Fri Apr 21 14:39:29 CST 2017]; root of context hierarchy
+2017-04-21 14:46:14,247 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application "ex7.3_transform_with_custom_data_type" shut down      *
+* normally on: 4/21/17 2:46 PM                                       *
+* Up for: 0 days, 0 hours, 6 mins, 36.328 sec                        *
+**********************************************************************
+2017-04-21 14:46:14,688 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ex7.3_transform_with_custom_data_type' +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:14,700 [Mule.app.deployer.monitor.1.thread.1] WARN  com.mulesoft.module.client.APIPlatformClientCoreExtension - Client ID or Client Secret were not provided. API Manager client is DISABLED for app ex7.3_transform_with_custom_data_type
+2017-04-21 14:46:14,704 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-21 14:46:14,712 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-21 14:46:14,735 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-21 14:46:14,735 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-21 14:46:14,746 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@19f60c10: startup date [Fri Apr 21 14:46:14 CST 2017]; root of context hierarchy
+2017-04-21 14:46:15,303 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-21 14:46:15,569 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-21 14:46:15,572 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:46:15,572 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5ca05fa8
+2017-04-21 14:46:15,577 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:46:15,579 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-tx-log\tx2.log
+2017-04-21 14:46:15,584 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-xa-tx-log\tx2.log
+2017-04-21 14:46:15,629 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex7.3_transform_with_custom_data_type\ex7.3_transform_with_custom_data_type.xml'}]"
+2017-04-21 14:46:15,629 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex7.3_transform_with_custom_data_type\ex7.3_transform_with_custom_data_type.xml'}]"
+2017-04-21 14:46:18,634 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ex7.3_transform_with_custom_data_type'     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:18,636 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-21 14:46:18,636 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-21 14:46:18,670 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-21 14:46:18,672 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:18,677 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-21 14:46:18,682 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:46:18,682 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:46:18,702 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-21 14:46:18,711 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ex7.3_transform_with_custom_data_type                 *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-04-21 14:46:35,516 [pool-5-thread-1] INFO  com.mulesoft.mule.debugger.commands.LoadInnerFieldsCommand - Load Inner Fields From : FieldPath{name='payload', orderedPathElements=[com.mulesoft.mule.debugger.response.FieldNode@606b329a, com.mulesoft.mule.debugger.response.FieldNode@4b819d9f]}
+2017-04-21 14:46:36,798 [pool-5-thread-1] INFO  com.mulesoft.mule.debugger.commands.LoadInnerFieldsCommand - Load Inner Fields From : FieldPath{name='payload', orderedPathElements=[com.mulesoft.mule.debugger.response.FieldNode@5d6862aa, com.mulesoft.mule.debugger.response.FieldNode@5c6f2c73, com.mulesoft.mule.debugger.response.FieldNode@628108ee]}
+2017-04-21 14:46:45,853 [[ex7.3_transform_with_custom_data_type].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - Fri Apr 21 14:46:28 CST 2017
+2017-04-21 14:46:45,854 [[ex7.3_transform_with_custom_data_type].HTTP_Listener_Configuration.worker.01] WARN  org.mule.module.http.internal.listener.HttpResponseBuilder - Payload is a Map which will be used to generate an url encoded http body but Contenty-Type specified is application/java and not application/x-www-form-urlencoded
+2017-04-21 14:46:53,757 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Stopping app 'ex7.3_transform_with_custom_data_type'     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:53,758 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Stopping flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:46:53,759 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Stopping service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:46:53,891 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping model: _muleSystemModel
+2017-04-21 14:46:53,894 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Stopped listener on http://0.0.0.0:8088
+2017-04-21 14:46:53,895 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopping ResourceManager
+2017-04-21 14:46:53,895 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopped ResourceManager
+2017-04-21 14:46:53,898 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing app 'ex7.3_transform_with_custom_data_type'    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:53,898 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2017-04-21 14:46:53,902 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:46:53,902 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:46:53,904 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2017-04-21 14:46:53,947 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@19f60c10: startup date [Fri Apr 21 14:46:14 CST 2017]; root of context hierarchy
+2017-04-21 14:46:54,119 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application "ex7.3_transform_with_custom_data_type" shut down      *
+* normally on: 4/21/17 2:46 PM                                       *
+* Up for: 0 days, 0 hours, 0 mins, 35.484 sec                        *
+**********************************************************************
+2017-04-21 14:46:54,255 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ex7.3_transform_with_custom_data_type' +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:54,267 [Mule.app.deployer.monitor.1.thread.1] WARN  com.mulesoft.module.client.APIPlatformClientCoreExtension - Client ID or Client Secret were not provided. API Manager client is DISABLED for app ex7.3_transform_with_custom_data_type
+2017-04-21 14:46:54,268 [Mule.app.deployer.monitor.1.thread.1] WARN  com.mulesoft.module.client.APIPlatformClientCoreExtension - Client ID or Client Secret were not provided. API Manager client is DISABLED for app ex7.3_transform_with_custom_data_type
+2017-04-21 14:46:54,271 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-21 14:46:54,279 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-21 14:46:54,299 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-21 14:46:54,299 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-21 14:46:54,311 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@354eee9f: startup date [Fri Apr 21 14:46:54 CST 2017]; root of context hierarchy
+2017-04-21 14:46:54,730 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-21 14:46:54,944 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-21 14:46:54,946 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:46:54,946 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@222b6297
+2017-04-21 14:46:54,952 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:46:54,956 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-tx-log\tx2.log
+2017-04-21 14:46:54,960 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\ex7.3_transform_with_custom_data_type\queue-xa-tx-log\tx2.log
+2017-04-21 14:46:55,077 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex7.3_transform_with_custom_data_type\ex7.3_transform_with_custom_data_type.xml'}]"
+2017-04-21 14:46:55,077 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\ex7.3_transform_with_custom_data_type\ex7.3_transform_with_custom_data_type.xml'}]"
+2017-04-21 14:46:58,079 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ex7.3_transform_with_custom_data_type'     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:58,080 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-21 14:46:58,081 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-21 14:46:58,114 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-21 14:46:58,116 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-21 14:46:58,118 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-21 14:46:58,119 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: ex7.3_transform_with_custom_data_typeFlow
+2017-04-21 14:46:58,119 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: ex7.3_transform_with_custom_data_typeFlow.stage1
+2017-04-21 14:46:58,133 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-21 14:46:58,138 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ex7.3_transform_with_custom_data_type                 *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************

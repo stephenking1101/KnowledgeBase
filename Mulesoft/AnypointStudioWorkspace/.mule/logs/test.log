@@ -1,0 +1,767 @@
+2017-04-20 14:26:26,235 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'test'                                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:26:26,474 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-20 14:26:26,613 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-20 14:26:26,807 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-20 14:26:26,808 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-20 14:26:26,950 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@74aa9c72: startup date [Thu Apr 20 14:26:26 CST 2017]; root of context hierarchy
+2017-04-20 14:26:29,391 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-20 14:26:29,961 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-04-20 14:26:30,764 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-20 14:26:31,778 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-20 14:26:31,783 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: testFlow
+2017-04-20 14:26:31,783 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@241fc278
+2017-04-20 14:26:31,838 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: testFlow.stage1
+2017-04-20 14:26:31,852 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: getClassicalMusic
+2017-04-20 14:26:31,852 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@a2df0d5
+2017-04-20 14:26:31,858 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: getClassicalMusic.stage1
+2017-04-20 14:26:32,135 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: getModernMusic
+2017-04-20 14:26:32,135 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@3e39f08c
+2017-04-20 14:26:32,140 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: getModernMusic.stage1
+2017-04-20 14:26:32,165 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-tx-log\tx2.log
+2017-04-20 14:26:32,199 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-xa-tx-log\tx2.log
+2017-04-20 14:26:32,344 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\test\test.xml'}]"
+2017-04-20 14:26:32,345 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\test\test.xml'}]"
+2017-04-20 14:26:35,426 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'test'                                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:26:35,428 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-20 14:26:35,428 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-20 14:26:35,581 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-20 14:26:35,584 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:26:35,589 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-20 14:26:35,591 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: testFlow
+2017-04-20 14:26:35,592 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: testFlow.stage1
+2017-04-20 14:26:35,597 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: getClassicalMusic
+2017-04-20 14:26:35,597 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: getClassicalMusic.stage1
+2017-04-20 14:26:35,601 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: getModernMusic
+2017-04-20 14:26:35,601 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: getModernMusic.stage1
+2017-04-20 14:26:35,690 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-20 14:26:35,715 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: test                                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-04-20 14:28:42,193 [[test].HTTP_Listener_Configuration.worker.01] ERROR org.mule.exception.DefaultMessagingExceptionStrategy - 
+********************************************************************************
+Message               : Execution of the expression "Classical" failed. (org.mule.api.expression.ExpressionRuntimeException).
+Payload               : {NullPayload}
+Payload Type          : org.mule.transport.NullPayload
+Element               : /testFlow/processors/1 @ test:test.xml:23 (Choice)
+Element XML           : <choice doc:name="Choice">
+                        <when expression="Classical">
+                        <flow-ref name="getClassicalMusic" doc:name="getClassicalMusic"></flow-ref>
+                        </when>
+                        <when expression="Rock">
+                        <flow-ref name="getModernMusic" doc:name="getModernMusic"></flow-ref>
+                        </when>
+                        <otherwise>
+                        <logger level="INFO" doc:name="Logger"></logger>
+                        </otherwise>
+                        </choice>
+--------------------------------------------------------------------------------
+Root Exception stack trace:
+[Error: unresolvable property or identifier: Classical]
+[Near : {... Classical ....}]
+             ^
+[Line: 1, Column: 1]
+	at org.mule.mvel2.optimizers.impl.refl.ReflectiveAccessorOptimizer.getBeanProperty(ReflectiveAccessorOptimizer.java:771)
+	at org.mule.mvel2.optimizers.impl.refl.ReflectiveAccessorOptimizer.compileGetChain(ReflectiveAccessorOptimizer.java:409)
+	at org.mule.mvel2.optimizers.impl.refl.ReflectiveAccessorOptimizer.optimizeAccessor(ReflectiveAccessorOptimizer.java:212)
+	at org.mule.mvel2.ast.ASTNode.optimize(ASTNode.java:159)
+	at org.mule.mvel2.ast.ASTNode.getReducedValueAccelerated(ASTNode.java:115)
+	at org.mule.mvel2.MVELRuntime.execute(MVELRuntime.java:86)
+	at org.mule.mvel2.compiler.CompiledExpression.getDirectValue(CompiledExpression.java:123)
+	at org.mule.mvel2.compiler.CompiledExpression.getValue(CompiledExpression.java:119)
+	at org.mule.mvel2.compiler.CompiledExpression.getValue(CompiledExpression.java:113)
+	at org.mule.mvel2.MVEL.executeExpression(MVEL.java:953)
+	at org.mule.el.mvel.MVELExpressionExecutor.execute(MVELExpressionExecutor.java:87)
+	at org.mule.el.mvel.MVELExpressionLanguage.evaluateInternal(MVELExpressionLanguage.java:228)
+	at org.mule.el.mvel.MVELExpressionLanguage.evaluate(MVELExpressionLanguage.java:192)
+	at org.mule.el.mvel.MVELExpressionLanguage.evaluate(MVELExpressionLanguage.java:170)
+	at org.mule.expression.DefaultExpressionManager.evaluate(DefaultExpressionManager.java:230)
+	at org.mule.expression.DefaultExpressionManager.evaluateBoolean(DefaultExpressionManager.java:402)
+	at org.mule.routing.filters.ExpressionFilter.accept(ExpressionFilter.java:123)
+	at org.mule.routing.ChoiceRouter.selectProcessors(ChoiceRouter.java:33)
+	at org.mule.routing.AbstractSelectiveRouter.process(AbstractSelectiveRouter.java:189)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:88)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.processor.AsyncInterceptingMessageProcessor.process(AsyncInterceptingMessageProcessor.java:102)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.construct.DynamicPipelineMessageProcessor.process(DynamicPipelineMessageProcessor.java:55)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:88)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.interceptor.AbstractEnvelopeInterceptor.processBlocking(AbstractEnvelopeInterceptor.java:58)
+	at org.mule.processor.AbstractRequestResponseMessageProcessor.process(AbstractRequestResponseMessageProcessor.java:47)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.processor.AbstractFilteringMessageProcessor.process(AbstractFilteringMessageProcessor.java:52)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:98)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.processor.AbstractRequestResponseMessageProcessor.processBlocking(AbstractRequestResponseMessageProcessor.java:56)
+	at org.mule.processor.AbstractRequestResponseMessageProcessor.process(AbstractRequestResponseMessageProcessor.java:47)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.processor.BlockingProcessorExecutor.executeNext(BlockingProcessorExecutor.java:88)
+	at org.mule.processor.BlockingProcessorExecutor.execute(BlockingProcessorExecutor.java:59)
+	at org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(ExceptionToMessagingExceptionExecutionInterceptor.java:27)
+	at org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(MessageProcessorNotificationExecutionInterceptor.java:108)
+	at org.mule.execution.MessageProcessorExecutionTemplate.execute(MessageProcessorExecutionTemplate.java:44)
+	at org.mule.construct.AbstractPipeline$3.process(AbstractPipeline.java:232)
+	at org.mule.module.http.internal.listener.HttpMessageProcessorTemplate.routeEvent(HttpMessageProcessorTemplate.java:73)
+	at org.mule.execution.AsyncResponseFlowProcessingPhase$1.process(AsyncResponseFlowProcessingPhase.java:72)
+	at org.mule.execution.AsyncResponseFlowProcessingPhase$1.process(AsyncResponseFlowProcessingPhase.java:59)
+	at org.mule.execution.ExecuteCallbackInterceptor.execute(ExecuteCallbackInterceptor.java:16)
+	at org.mule.execution.CommitTransactionInterceptor.execute(CommitTransactionInterceptor.java:35)
+	at org.mule.execution.CommitTransactionInterceptor.execute(CommitTransactionInterceptor.java:22)
+	at org.mule.execution.HandleExceptionInterceptor.execute(HandleExceptionInterceptor.java:30)
+	at org.mule.execution.HandleExceptionInterceptor.execute(HandleExceptionInterceptor.java:14)
+	at org.mule.execution.BeginAndResolveTransactionInterceptor.execute(BeginAndResolveTransactionInterceptor.java:67)
+	at org.mule.execution.ResolvePreviousTransactionInterceptor.execute(ResolvePreviousTransactionInterceptor.java:44)
+	at org.mule.execution.SuspendXaTransactionInterceptor.execute(SuspendXaTransactionInterceptor.java:50)
+	at org.mule.execution.ValidateTransactionalStateInterceptor.execute(ValidateTransactionalStateInterceptor.java:40)
+	at org.mule.execution.IsolateCurrentTransactionInterceptor.execute(IsolateCurrentTransactionInterceptor.java:41)
+	at org.mule.execution.ExternalTransactionInterceptor.execute(ExternalTransactionInterceptor.java:48)
+	at org.mule.execution.RethrowExceptionInterceptor.execute(RethrowExceptionInterceptor.java:28)
+	at org.mule.execution.RethrowExceptionInterceptor.execute(RethrowExceptionInterceptor.java:13)
+	at org.mule.execution.TransactionalErrorHandlingExecutionTemplate.execute(TransactionalErrorHandlingExecutionTemplate.java:110)
+	at org.mule.execution.AsyncResponseFlowProcessingPhase.runPhase(AsyncResponseFlowProcessingPhase.java:58)
+	at org.mule.execution.AsyncResponseFlowProcessingPhase.runPhase(AsyncResponseFlowProcessingPhase.java:35)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.phaseSuccessfully(PhaseExecutionEngine.java:65)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.phaseSuccessfully(PhaseExecutionEngine.java:69)
+	at com.mulesoft.mule.throttling.ThrottlingPhase.runPhase(ThrottlingPhase.java:186)
+	at com.mulesoft.mule.throttling.ThrottlingPhase.runPhase(ThrottlingPhase.java:57)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.phaseSuccessfully(PhaseExecutionEngine.java:65)
+	at com.mulesoft.gateway.http.phases.GatewayValidationPhase.runPhase(GatewayValidationPhase.java:93)
+	at com.mulesoft.gateway.http.phases.GatewayValidationPhase.runPhase(GatewayValidationPhase.java:49)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.phaseSuccessfully(PhaseExecutionEngine.java:65)
+	at org.mule.modules.cors.CorsPhase.runPhase(CorsPhase.java:113)
+	at org.mule.modules.cors.CorsPhase.runPhase(CorsPhase.java:40)
+	at org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.process(PhaseExecutionEngine.java:114)
+	at org.mule.execution.PhaseExecutionEngine.process(PhaseExecutionEngine.java:41)
+	at org.mule.execution.MuleMessageProcessingManager.processMessage(MuleMessageProcessingManager.java:32)
+	at org.mule.module.http.internal.listener.DefaultHttpListener$1.handleRequest(DefaultHttpListener.java:133)
+	at org.mule.module.http.internal.listener.grizzly.GrizzlyRequestDispatcherFilter.handleRead(GrizzlyRequestDispatcherFilter.java:83)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:119)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:284)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:201)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:133)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:112)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:77)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:526)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:112)
+	at org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy.run0(ExecutorPerServerAddressIOStrategy.java:102)
+	at org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy.access$100(ExecutorPerServerAddressIOStrategy.java:30)
+	at org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy$WorkerThreadRunnable.run(ExecutorPerServerAddressIOStrategy.java:125)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+********************************************************************************
+
+2017-04-20 14:31:54,645 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'test'                                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:31:54,911 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-20 14:31:55,043 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-20 14:31:55,218 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-20 14:31:55,218 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-20 14:31:55,317 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@5c20aab9: startup date [Thu Apr 20 14:31:55 CST 2017]; root of context hierarchy
+2017-04-20 14:31:57,883 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-20 14:31:58,511 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-04-20 14:31:59,327 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-20 14:32:00,183 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-20 14:32:00,189 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: testFlow
+2017-04-20 14:32:00,189 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1186374c
+2017-04-20 14:32:00,224 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: testFlow.stage1
+2017-04-20 14:32:00,237 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: getClassicalMusic
+2017-04-20 14:32:00,237 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@467af68c
+2017-04-20 14:32:00,245 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: getClassicalMusic.stage1
+2017-04-20 14:32:00,571 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: getModernMusic
+2017-04-20 14:32:00,571 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@38dbeb39
+2017-04-20 14:32:00,577 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: getModernMusic.stage1
+2017-04-20 14:32:00,605 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-tx-log\tx2.log
+2017-04-20 14:32:00,622 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-xa-tx-log\tx2.log
+2017-04-20 14:32:00,759 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\test\test.xml'}]"
+2017-04-20 14:32:00,759 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\test\test.xml'}]"
+2017-04-20 14:32:03,791 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'test'                                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:32:03,794 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-20 14:32:03,794 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-20 14:32:03,866 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-20 14:32:03,871 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:32:03,874 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-20 14:32:03,876 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: testFlow
+2017-04-20 14:32:03,877 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: testFlow.stage1
+2017-04-20 14:32:03,881 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: getClassicalMusic
+2017-04-20 14:32:03,882 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: getClassicalMusic.stage1
+2017-04-20 14:32:03,886 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: getModernMusic
+2017-04-20 14:32:03,886 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: getModernMusic.stage1
+2017-04-20 14:32:03,948 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-20 14:32:03,983 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: test                                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-04-20 14:33:03,001 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=1811cf10-2593-11e7-a537-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Classical
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Classical]]}
+    http.query.string=category=Classical
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52064
+    http.request.path=/music
+    http.request.uri=/music?category=Classical
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:33:09,718 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=1811cf10-2593-11e7-a537-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Classical
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Classical]]}
+    http.query.string=category=Classical
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52064
+    http.request.path=/music
+    http.request.uri=/music?category=Classical
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:34:14,193 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Stopping app 'test'                                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:34:14,195 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Stopping flow: testFlow
+2017-04-20 14:34:14,197 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Stopping service: testFlow.stage1
+2017-04-20 14:34:14,231 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Stopping flow: getClassicalMusic
+2017-04-20 14:34:14,231 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Stopping service: getClassicalMusic.stage1
+2017-04-20 14:34:14,258 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Stopping flow: getModernMusic
+2017-04-20 14:34:14,259 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Stopping service: getModernMusic.stage1
+2017-04-20 14:34:14,323 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping model: _muleSystemModel
+2017-04-20 14:34:14,329 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Stopped listener on http://0.0.0.0:8088
+2017-04-20 14:34:14,331 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopping ResourceManager
+2017-04-20 14:34:14,331 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopped ResourceManager
+2017-04-20 14:34:14,336 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing app 'test'                                     +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:34:14,339 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2017-04-20 14:34:14,343 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: testFlow
+2017-04-20 14:34:14,344 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: testFlow.stage1
+2017-04-20 14:34:14,346 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: getClassicalMusic
+2017-04-20 14:34:14,347 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: getClassicalMusic.stage1
+2017-04-20 14:34:14,347 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: getModernMusic
+2017-04-20 14:34:14,348 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: getModernMusic.stage1
+2017-04-20 14:34:14,351 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2017-04-20 14:34:14,519 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@5c20aab9: startup date [Thu Apr 20 14:31:55 CST 2017]; root of context hierarchy
+2017-04-20 14:34:14,734 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application "test" shut down normally on: 4/20/17 2:34 PM          *
+* Up for: 0 days, 0 hours, 2 mins, 10.939 sec                        *
+**********************************************************************
+2017-04-20 14:34:15,081 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'test'                                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:34:15,094 [Mule.app.deployer.monitor.1.thread.1] WARN  com.mulesoft.module.client.APIPlatformClientCoreExtension - Client ID or Client Secret were not provided. API Manager client is DISABLED for app test
+2017-04-20 14:34:15,101 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-20 14:34:15,114 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-20 14:34:15,139 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-20 14:34:15,139 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-20 14:34:15,153 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@61470dcd: startup date [Thu Apr 20 14:34:15 CST 2017]; root of context hierarchy
+2017-04-20 14:34:15,802 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-20 14:34:15,908 [Mule.app.deployer.monitor.1.thread.1] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-04-20 14:34:16,109 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-20 14:34:16,112 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: testFlow
+2017-04-20 14:34:16,113 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@7c31a9b7
+2017-04-20 14:34:16,120 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: testFlow.stage1
+2017-04-20 14:34:16,121 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: getClassicalMusic
+2017-04-20 14:34:16,121 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@35782146
+2017-04-20 14:34:16,127 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: getClassicalMusic.stage1
+2017-04-20 14:34:16,128 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: getModernMusic
+2017-04-20 14:34:16,128 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@72324d30
+2017-04-20 14:34:16,135 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: getModernMusic.stage1
+2017-04-20 14:34:16,140 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-tx-log\tx2.log
+2017-04-20 14:34:16,147 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-xa-tx-log\tx2.log
+2017-04-20 14:34:16,199 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\test\test.xml'}]"
+2017-04-20 14:34:16,199 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\test\test.xml'}]"
+2017-04-20 14:34:27,120 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'test'                                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:34:27,333 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-04-20 14:34:27,439 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-04-20 14:34:27,582 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-04-20 14:34:27,582 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-04-20 14:34:27,672 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@35beb15e: startup date [Thu Apr 20 14:34:27 CST 2017]; root of context hierarchy
+2017-04-20 14:34:29,699 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-20 14:34:30,245 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-04-20 14:34:30,821 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-04-20 14:34:31,447 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-04-20 14:34:31,451 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: testFlow
+2017-04-20 14:34:31,452 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@27a09971
+2017-04-20 14:34:31,485 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: testFlow.stage1
+2017-04-20 14:34:31,498 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: getClassicalMusic
+2017-04-20 14:34:31,498 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@168b4cb0
+2017-04-20 14:34:31,504 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: getClassicalMusic.stage1
+2017-04-20 14:34:31,791 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: getModernMusic
+2017-04-20 14:34:31,792 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@7944b8b4
+2017-04-20 14:34:31,796 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: getModernMusic.stage1
+2017-04-20 14:34:31,816 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-tx-log\tx2.log
+2017-04-20 14:34:31,831 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-xa-tx-log\tx1.log and C:\Users\pdcwsx\AnypointStudio\workspace\.mule\.\.mule\test\queue-xa-tx-log\tx2.log
+2017-04-20 14:34:31,951 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\test\test.xml'}]"
+2017-04-20 14:34:31,951 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\pdcwsx\AnypointStudio\workspace\.mule\apps\test\test.xml'}]"
+2017-04-20 14:34:34,980 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'test'                                      +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:34:34,982 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-04-20 14:34:34,982 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-04-20 14:34:35,048 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8088
+2017-04-20 14:34:35,053 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-04-20 14:34:35,056 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-04-20 14:34:35,057 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: testFlow
+2017-04-20 14:34:35,058 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: testFlow.stage1
+2017-04-20 14:34:35,061 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: getClassicalMusic
+2017-04-20 14:34:35,061 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: getClassicalMusic.stage1
+2017-04-20 14:34:35,063 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: getModernMusic
+2017-04-20 14:34:35,064 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: getModernMusic.stage1
+2017-04-20 14:34:35,107 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-04-20 14:34:35,134 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: test                                                  *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   JMX Agent                                                        *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-04-20 14:34:41,490 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=6ef994c0-2593-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Classical
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Classical]]}
+    http.query.string=category=Classical
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52103
+    http.request.path=/music
+    http.request.uri=/music?category=Classical
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:34:41,491 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=6ef994c0-2593-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Classical
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Classical]]}
+    http.query.string=category=Classical
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52103
+    http.request.path=/music
+    http.request.uri=/music?category=Classical
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:35:01,456 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=7aa603d0-2593-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Rock
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Rock]]}
+    http.query.string=category=Rock
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52103
+    http.request.path=/music
+    http.request.uri=/music?category=Rock
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:35:01,456 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=7aa603d0-2593-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Rock
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Rock]]}
+    http.query.string=category=Rock
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52103
+    http.request.path=/music
+    http.request.uri=/music?category=Rock
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:36:16,662 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=a7f6a970-2593-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Classical
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Classical]]}
+    http.query.string=category=Classical
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52118
+    http.request.path=/music
+    http.request.uri=/music?category=Classical
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:36:16,662 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=a7f6a970-2593-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Classical
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Classical]]}
+    http.query.string=category=Classical
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52118
+    http.request.path=/music
+    http.request.uri=/music?category=Classical
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:36:29,308 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=af8097f0-2593-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Rock
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Rock]]}
+    http.query.string=category=Rock
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52118
+    http.request.path=/music
+    http.request.uri=/music?category=Rock
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:36:29,308 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=af8097f0-2593-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Rock
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Rock]]}
+    http.query.string=category=Rock
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52118
+    http.request.path=/music
+    http.request.uri=/music?category=Rock
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:49:23,770 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=7d1ce550-2595-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Rock
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Rock]]}
+    http.query.string=category=Rock
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52260
+    http.request.path=/music
+    http.request.uri=/music?category=Rock
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-04-20 14:49:23,771 [[test].HTTP_Listener_Configuration.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=7d1ce550-2595-11e7-9536-561920524153
+  payload=java.lang.String
+  correlationId=<not set>
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+    category=Rock
+  INBOUND scoped properties:
+    accept-encoding=gzip,deflate
+    connection=Keep-Alive
+    host=localhost:8088
+    http.listener.path=/music
+    http.method=GET
+    http.query.params=ParameterMap{[category=[Rock]]}
+    http.query.string=category=Rock
+    http.relative.path=/music
+    http.remote.address=/127.0.0.1:52260
+    http.request.path=/music
+    http.request.uri=/music?category=Rock
+    http.scheme=http
+    http.uri.params=ParameterMap{[]}
+    http.version=HTTP/1.1
+    user-agent=Apache-HttpClient/4.1.1 (java 1.5)
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
