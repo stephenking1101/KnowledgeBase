@@ -8,7 +8,7 @@ categories: [interview]
 # Java Interview Q&A
 
 ## abstract class和interface有什么区别
-
+<p>
 1. 相同点
   A. 两者都是抽象类，都不能实例化。
   B. interface实现类及abstrct class的子类都必须要实现已经声明的抽象方法。
@@ -37,3 +37,4 @@ categories: [interview]
   B. 某些场合下，只靠纯粹的接口不能满足类与类之间的协调，还必需类中表示状态的变量来区别不同的关系。abstract的中介作用可以很好地满足这一点。
   C. 规范了一组相互协调的方法，其中一些方法是共同的，与状态无关的，可以共享的，无需子类分别实现；而另一些方法却需要各个子类根据自己特定的状态来实现特定的功能。
   
+</p>
