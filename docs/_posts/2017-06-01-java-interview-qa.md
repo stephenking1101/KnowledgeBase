@@ -68,9 +68,52 @@ categories: [interview]
 
 1. Servlet体系结构是建立在Java多线程机制之上的，它的生命周期是由Web 容器负责的。一个Servlet类在Application中只有一个实例存在，也就是有多个线程在使用这个实例。这是单例模式的应用。无状态的单例是线程安全的，但我们如果在Servlet里用了实例变量，那么就变成有状态了，是非线程安全的。如下面的用法就是不安全的,因为user,out都是有状态信息的。
 
+   ```java
+   /** 
+    * 非线程安全的Servlet。 
+    * @author Peter Wei 
+    * 
+    */  
+   public class UnSafeServlet HttpServlet{  
+      
+       User user;  
+       PrintWriter out;  
+      
+       public void doGet (HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{  
+           //do something...  
+       }  
+   }  
+   ```
+
    Out,Request,Response,Session,Config,Page,PageContext是线程安全的,Application在整个系统内被使用,所以不是线程安全的.
 
-2. Struts1也是基于单例模式实现，也就是只有一个Action实例供多线程使用。默认的模式是前台页面数据通过actionForm传入，在action中的excute方法接收，这样action是无状态的，所以一般情况下Strunts1是线程安全的。如果Action中用了实例变量，那么就变成有状态了，同样是非线程安全的。像下面这样就是线程不安全的。 
+2. Struts1也是基于单例模式实现，也就是只有一个Action实例供多线程使用。默认的模式是前台页面数据通过actionForm传入，在action中的excute方法接收，这样action是无状态的，所以一般情况下Strunts1是线程安全的。如果Action中用了实例变量，那么就变成有状态了，同样是非线程安全的。像下面这样就是线程不安全的。
+
+   ```java
+   /** 
+    * 非线程安全的Struts1示例 
+    *  
+    * @author Peter Wei 
+    *  
+    */  
+   public class UnSafeAction1 extends Action {  
+     
+       // 因为Struts1是单例实现，有状态情况下，对象引用是非线程安全的  
+       User user;  
+     
+       public void execute() {  
+           // do something...  
+       }  
+     
+       public User getUser() {  
+           return user;  
+       }  
+     
+       public void setUser(User user) {  
+           this.user = user;  
+       }  
+   }  
+   ```
 
 3. Struts2默认的实现是Prototype模式。也就是每个请求都新生成一个Action实例，所以不存在线程安全问题。需要注意的是，如果由Spring管理action的生命周期， scope要配成prototype作用域。 
 
