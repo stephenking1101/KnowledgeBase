@@ -1,3 +1,4 @@
 #Jekyll Config
 encoding: UTF-8
 highlighter: rouge
+permalink: /:year/:month/:day/:title

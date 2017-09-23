@@ -2,7 +2,7 @@
 title:  "abstract class和interface有什么区别"
 date:   2017-06-01 09:00:00 +0800
 author: Stephen
-categories: [java, interview]
+categories: [Java Interview]
 ---
 
 # abstract class和interface有什么区别

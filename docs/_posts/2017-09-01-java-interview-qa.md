@@ -2,7 +2,7 @@
 title:  "有状态、无状态(Stateful and Stateless)"
 date:   2017-09-01 09:00:00 +0800
 author: Stephen
-categories: [java, interview]
+categories: [Java Interview]
 ---
 
 # 有状态、无状态(Stateful and Stateless)
