@@ -7,6 +7,7 @@
 <title>My Knowledge Base</title>
 </head>
 <body>
+	<!--
 	<h3>Articles:</h3>
 	<ul>
 	  {% for post in site.posts %}
@@ -15,6 +16,18 @@
 		</li>
 	  {% endfor %}
 	</ul>
+	-->
+	{% for category in site.categories %}
+	<h3>{{ category | first }} articles:</h3>
+	</span>total: {{ category | last | size }}</span>
+	<ul>
+	  {% for post in category.last %}
+		<li>
+		  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+		</li>
+	  {% endfor %}
+	</ul>
+	{% endfor %}
 	<h3>Project Management:</h3>
 	<ul>
 		<li>
