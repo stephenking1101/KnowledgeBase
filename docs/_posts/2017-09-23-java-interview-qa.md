@@ -1,5 +1,5 @@
 ---
-title:  "Java并发编程：volatile关键字解析"
+title:  "Java并发编程：volatile关键字解析 (原子性,可见性,有序性)"
 date:   2017-09-01 09:00:00 +0800
 author: Stephen
 categories: [Java Interview]
