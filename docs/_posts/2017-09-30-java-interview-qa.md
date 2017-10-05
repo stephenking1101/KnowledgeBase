@@ -1,6 +1,5 @@
 ﻿# OAuth2.0认证和授权机制讲解
 
-
 第三方登录是应用开发中的常用功能，通过第三方登录，我们可以更加容易的吸引用户来到我们的应用中。现在，很多网站都提供了第三方登录的功能，在他们的官网中，都提供了如何接入第三方登录的文档。但是，不同的网站文档差别极大，各种第三方文档也是千奇百怪，同时，很多网站提供的SDK用法也是各不相同。对于不了解第三方登录的新手来说，实现一个支持多网站第三方登录的功能可以说是极其痛苦。
 
 实际上，大多数网站提供的第三方登录都遵循OAuth协议，虽然大多数网站的细节处理都是不一致的，甚至会基于OAuth协议进行扩展，但大体上其流程是一定的。今天，我们就来看看基于OAuth2的第三方登陆功能是这样一个流程。
@@ -9,7 +8,7 @@
 
 OAuth协议目前已经升级到了2.0，大部分的网站也是支持OAuth2.0的，因此让我们先看看OAuth2。
 
-![](https://stephenking1101.github.io/KnowledgeBase/img/2017-09-30-java-interview-qa1.png)
+![](https://github.com/stephenking1101/KnowledgeBase/blob/master/docs/img/2017-09-30-java-interview-qa1.png?raw=true)
 
 上图中所涉及到的对象分别为：
 
@@ -47,19 +46,19 @@ OAuth协议目前已经升级到了2.0，大部分的网站也是支持OAuth2.0�
 
 当用户希望使用第三方登录进行登录时，第三方应用会通过类似下图【快速登录】的方式将用户引导至授权页面，为了和OAuth基本流程一致，我们将这一步定义为第0步。
 
-![](https://stephenking1101.github.io/KnowledgeBase/img/2017-09-30-java-interview-qa2.png)
+![](https://github.com/stephenking1101/KnowledgeBase/blob/master/docs/img/2017-09-30-java-interview-qa2.png?raw=true)
 
 第0.5步. 用户身份验证
 
 当我们点击Github的图标，我们会进入到Github应用下面，此时实际上进行了一次用户身份的验证，之前没有登录Github的用户需要输入Github的账号密码，已登录的用户Github会根据Session进行身份确认。此操作我们称为0.5步。接下来正式进入OAuth2的流程
 
-![](https://stephenking1101.github.io/KnowledgeBase/img/2017-09-30-java-interview-qa3.png)
+![](https://github.com/stephenking1101/KnowledgeBase/blob/master/docs/img/2017-09-30-java-interview-qa3.png?raw=true)
 
 第1步. 用户授权
 
 用户身份确认后会进入下面这个页面，该页面由授权服务器提供，授权服务器会告诉用户该第三方在授权服务器中提交的相关信息（如果需要实现第三方登录功能，第三方应用需要向Github、微博等应用中提交应用的相关信息，不同服务可能会需要审核等不同的步骤），以及授权后第三方应用能够获取哪些资源。在Github中，最基础的认证可以访问用户的公共信息。如果用户同意授权，需要主动的点击【Authorize application】按钮。
 
-![](https://stephenking1101.github.io/KnowledgeBase/img/2017-09-30-java-interview-qa4.png)
+![](https://github.com/stephenking1101/KnowledgeBase/blob/master/docs/img/2017-09-30-java-interview-qa4.png?raw=true)
 
 第2步. 返回用户凭证（code）
 
@@ -119,3 +118,4 @@ GET https://api.github.com/user?access_token=...
 这样，当用户第一次授权并且注册后（主动注册或者第三方应用使用用户信息默认注册），当再次点击第三方登录的按钮，浏览器跳转到授权服务器，授权服务器通过Session找到用户的授权信息，发现该用户已经授权给该第三方应用，将直接跳转到redirect_uri，此时第三方应用通过唯一的用户ID找到相应的本地用户，自动帮助其登录。
 
 这样，就可以达到直接点击第三方登录按钮，不需要任何操作，经过几次跳转后自动登录的效果了。大家快去试试吧。
+
