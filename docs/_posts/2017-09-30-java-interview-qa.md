@@ -71,7 +71,7 @@ OAuth协议目前已经升级到了2.0，大部分的网站也是支持OAuth2.0�
 
 当用户点击按钮同意授权后，授权服务器将生成一个用户凭证（code），此时授权服务器如何将用户凭证（code）传递给第三方应用呢？
 
-当我们向授权服务器提交应用信息时，通常需要填写一个redirect_uri，当我们引导用户进入授权页面时，也会附带一个redirect_uri的信息(如https://github.com/login/oauth/authorize?client_id=XXX&redirect_uri=http%3A%2F%2Ftianmaying.com%2Foauth%2Fgithub%2Fcallback&state=XXX)， 当授权服务器验证两个URL一致时，会通知浏览器跳转到redirect_uri，同时，在redirect_uri后附加用户凭证（code）的相关信息，此时，浏览器返回第三方应用同时携带用户凭证（code）的相关信息。授权后访问的redirect_uri如下：
+当我们向授权服务器提交应用信息时，通常需要填写一个redirect_uri，当我们引导用户进入授权页面时，也会附带一个redirect_uri的信息( 如https://github.com/login/oauth/authorize?client_id=XXX&redirect_uri=http%3A%2F%2Ftianmaying.com%2Foauth%2Fgithub%2Fcallback&state=XXX )，当授权服务器验证两个URL一致时，会通知浏览器跳转到redirect_uri，同时，在redirect_uri后附加用户凭证（code）的相关信息，此时，浏览器返回第三方应用同时携带用户凭证（code）的相关信息。授权后访问的redirect_uri如下：
 
 http://tianmaying.com/oauth/github/callback?code=9e3efa6cea739f9aaab2&state=XXX
 
