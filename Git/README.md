@@ -49,14 +49,14 @@ Fetch operation will not merge commits into local branch.
 
 * Others
 
-    $ git tag [tag_name]    `# To create a local tag    
-    $ git branch [branch_name]    `# To create a local branch    
-    $ git grep "xxxx"    `# Very quick to search a string    
+    $ git tag [tag_name]    #To create a local tag     
+    $ git branch [branch_name]    #To create a local branch      
+    $ git grep "xxxx"    #Very quick to search a string     
 
  
 * Git update
 
-Because there’s some files modified in the workspace, use stash to hold on it.   
+    Because there’s some files modified in the workspace, use stash to hold on it.   
 
     $ git stash    
     $ git pull   
