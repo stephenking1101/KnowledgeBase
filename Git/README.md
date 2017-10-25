@@ -10,7 +10,7 @@
  
 ## Add or delete file(s)
 
-  $ git add [dir]    `# Include everything in [dir]    
+  $ git add [dir]    #Include everything in [dir]    
   $ git add path/to/file     
   $ git rm path/to/file    
  
@@ -27,15 +27,15 @@
  
 ## Merge branch
 
-  `# Merge branch2 into branch1    
+  #Merge branch2 into branch1    
   $ git checkout branch2; git pull    
   $ git checkout branch1; git pull    
   $ git merge branch2    
 
-  `# To undo the change    
+  #To undo the change    
   $ git reset --hard HEAD    
 
-  `# To reset a file back to an old commit    
+  #To reset a file back to an old commit    
   $ git reset [commit-id] [path/to/file]  
 
  
