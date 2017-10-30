@@ -63,3 +63,10 @@ Fetch operation will not merge commits into local branch.
     $ git stash pop    
 
 ## git config --global alias.update '!git stash && git pull && git stash pop', you can create a alias to simply the typing with git update.
+
+## Generate SSH key
+
+For Linux and Windows Git bash:  
+  $ ssh-keygen -t rsa  
+  $ cd ~/.ssh  
+  $ cp id_rsa.pub authorized_keys  
