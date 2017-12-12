@@ -83,3 +83,6 @@ scp -r /root/.ssh/id_rsa.pub 192.168.31.147:/root/.ssh/authorized_keys
 
 * run a playbook using a parallelism level of 10  
 ansible-playbook playbook.yml -f 10 -v
+
+* start the playbook at the task matching this name
+ansible-playbook test.yml --start-at-task="deregister cm file" -v
