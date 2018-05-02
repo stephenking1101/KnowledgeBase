@@ -159,3 +159,87 @@ Producer将消息发布到它选择的topic中去，它负责决定将哪个消�
 当消费行为发生时，一个topic会限制任何一个partition只能被subscribing consumer group中的一个consumer处理，这样就能保证这个consumer是该partition的唯一消费者，也就能保证一个partition中的消息是按照原来生成的顺序被读取的。由于一般partition的数量很多，这也能保证负载被均摊到很多消费者的身上。值得注意的是，consumer group中的消费者数量不能大于该consumer group订阅的topic的partition的数量。
 
 Kafka只保证任何一个partition内的消息是有序的，不保证topic中的消息是有序的。
+
+## Check kafka is started
+
+```
+package com.example.standalone.java;
+
+import java.util.Properties;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.KafkaAdminClient;
+import org.apache.kafka.clients.admin.ListTopicsOptions;
+import org.apache.kafka.clients.admin.ListTopicsResult;
+
+public class KafkaAdminClientDemo {
+
+	public static void main(String[] args){
+		Properties properties = new Properties();
+		properties.put("bootstrap.servers", "localhost:9092");
+		properties.put("connections.max.idle.ms", 10000);
+		properties.put("request.timeout.ms", 50000);
+		try (AdminClient client = KafkaAdminClient.create(properties))
+		{
+		    ListTopicsResult topics = client.listTopics();
+		    Set<String> names = topics.names().get();
+		    if (names.isEmpty())
+		    {
+		        // case: if no topic found.
+		    	System.out.print("no topic found");
+		    }
+		    return;
+		}
+		catch (InterruptedException | ExecutionException e)
+		{
+			System.out.print("not started");
+			e.printStackTrace();
+		    // Kafka is not available
+		}
+		
+		/*try (AdminClient client = AdminClient.create(properties)) {
+            client.listTopics(new ListTopicsOptions().timeoutMs(5000)).listings().get();
+        } catch (ExecutionException ex) {
+        	System.out.println("Kafka is not available, timed out after {} ms" + 5000);
+            return;
+        } catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+	}
+}
+```
+
+## Kafka coordinator
+
+通过配置advertised.listeners选取coordinator. 
+
+listeners里面指定kafka监听的ip和端口, 如果没有指定ip, 监听所以ip.
+
+############################# Socket Server Settings #############################
+
+# The address the socket server listens on. It will get the value returned from 
+# java.net.InetAddress.getCanonicalHostName() if not configured.
+#   FORMAT:
+#     listeners = listener_name://host_name:port
+#   EXAMPLE:
+#     listeners = PLAINTEXT://your.host.name:9092
+#监听机器上所有ip的9092的端口
+#listeners=PLAINTEXT://:9092
+#监听机器上所有ip的9092和9093的端口
+#listeners=PLAINTEXT://:9092,REPLICATION://:9093
+
+# Hostname and port the broker will advertise to producers and consumers. If not set, 
+# it uses the value for "listeners" if configured.  Otherwise, it will use the value
+# returned from java.net.InetAddress.getCanonicalHostName().
+#指定返回给client的coordinator的ip和端口
+#advertised.listeners=PLAINTEXT://your.host.name:9092
+#指定返回给client的coordinator的ip和端口, 如果通过9092访问, 返回9092的url; 如果通过9093访问, 返回9093的url
+#advertised.listeners=PLAINTEXT://host_ip_1:9092,REPLICATION://host_ip_2:9093
+
+# Maps listener names to security protocols, the default is for them to be the same. See the config documentation for more details
+#listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+#指定listener的名字, 因为就算同一部机通过不同端口访问, listener的名字要不同, 所以这里有PLAINTEXT和REPLICATION两个名字
+#listener.security.protocol.map=PLAINTEXT:PLAINTEXT,REPLICATION:PLAINTEXT
