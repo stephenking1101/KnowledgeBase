@@ -217,7 +217,7 @@ public class KafkaAdminClientDemo {
 通过配置advertised.listeners选取coordinator. 
 
 listeners里面指定kafka监听的ip和端口, 如果没有指定ip, 监听所以ip.
-
+```
 ############################# Socket Server Settings #############################
 
 # The address the socket server listens on. It will get the value returned from 
@@ -243,3 +243,9 @@ listeners里面指定kafka监听的ip和端口, 如果没有指定ip, 监听所�
 #listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
 #指定listener的名字, 因为就算同一部机通过不同端口访问, listener的名字要不同, 所以这里有PLAINTEXT和REPLICATION两个名字
 #listener.security.protocol.map=PLAINTEXT:PLAINTEXT,REPLICATION:PLAINTEXT
+
+#创建topic如果producer或者consumer用到的topic不存在
+#auto.create.topics.enable=true
+```
+
+http://kafka.apache.org/documentation.html#configuration
