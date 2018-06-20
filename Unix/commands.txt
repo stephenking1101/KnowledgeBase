@@ -1,2 +1,0 @@
-find /build -maxdepth 1 -type d -cmin +600 -print |grep ^/build/_ >> /build/cleanup_logs/cleanup_10_12_12.log
-for i in `find /build -maxdepth 1 -type d -cmin +600 -print |grep ^/build/_`; do rm -rf $i; done
