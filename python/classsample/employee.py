@@ -22,10 +22,12 @@ class Employee:
      print("Total Employee %d" % Employee.empCount)
  
    def displayEmployee(self):
+      self.abc = "abc";
       print("Name : ", self.name,  ", Salary: ", self.salary)
 	  
    def __del__(self): # __del__在对象销毁的时候被调用
       class_name = self.__class__.__name__
+      print(self.abc)
       print(class_name, "销毁")
  
 "创建 Employee 类的第一个对象"
@@ -68,8 +70,12 @@ class Child(Parent): # 定义子类
    def childMethod(self):
       print('调用子类方法')
  
-c = Child()          # 实例化子类
-c.childMethod()      # 调用子类的方法
-c.parentMethod()     # 调用父类方法
-c.setAttr(200)       # 再次调用父类的方法 - 设置属性值
-c.getAttr()          # 再次调用父类的方法 - 获取属性值
+def main():
+	c = Child()          # 实例化子类
+	c.childMethod()      # 调用子类的方法
+	c.parentMethod()     # 调用父类方法
+	c.setAttr(200)       # 再次调用父类的方法 - 设置属性值
+	c.getAttr()          # 再次调用父类的方法 - 获取属性值
+	
+if __name__ == '__main__':
+    main()

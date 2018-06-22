@@ -144,3 +144,17 @@ git checkout 0d1d7fc32 .
 # Then commit. Be sure and write a good message describing what you just did
 git commit
 ```
+
+## 恢复单个文件到历史版本
+
+git reset commit_id 文件路径
+git checkout -- 文件路径
+git checkout master
+
+基于本次提交创建临时分支
+git branch temp fef4501
+使用git branch 分支名 操作ID 这句命令能够创建一个新的分支,但要注意此时我们还没有切换到这个分支上,这个分支上面代码跟我刚才提交完之后的一样.
+
+git merge temp
+git push
+git branch -d temp

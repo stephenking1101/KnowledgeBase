@@ -1,0 +1,125 @@
+一、安装 Apache HTTP
+安装 Apache HTTP 很简单，只需要在终端输入以下命令就可以了：
+
+sudo yum install httpd
+
+如果当前登录用户不是 root 的话，执行，sudo 命令是需要输入 root 用户的密码； 
+安装完毕后，启动服务：
+
+systemctl start httpd.service
+
+当启动服务器完成之后，先别着急往下弄，可以直接在浏览器中输入服务器的 ip 地址，应该就可以看到 Apache 的欢迎页面了； 
+如果你的 ip 地址已经和域名绑定了，那么在浏览器中输入你的域名也可以访问了；
+
+二、安装 MySql
+
+在 CentOS 7 中的 yum 源中是没有 Mysql 的，其默认数据库是 MariaDB； 
+可以通过以下命令行进行下载安装：
+
+sudo rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+yum install mysql mysql-server mysql-libs mysql-server
+
+三、开机默认启动 Apache 和 Mysql 服务
+systemctl enable httpd.service
+systemctl enable mysqld.service
+
+最好把这些服务都再重启一下：
+
+systemctl restart httpd.service
+systemctl restart mysqld.service
+
+四、在 Mysql 中新建数据库
+mysql -u root -p
+
+通过上面的命令进入数据库，然后输入密码，但其实默认是没有密码的，直接回车就能进入了； 
+进入后，创建一个叫 wordpress 的数据库：
+
+create database wordpress;
+
+（可选）修改 Mysql 默认密码
+
+Mysql 安装好后，以 root 账号登录进去，默认是没有密码的，直接回车就行； 
+那么我们顺带说一下如何修改其默认密码： 
+首先，选中 mysql 数据库：
+
+use mysql;
+
+然后：
+
+update user set password=password('新密码') where user='root';
+
+再，刷新用户权限列表：
+
+flush privileges;
+
+最后键入 exit 退出，在重新输入 mysql -u root -p 登录试试；
+
+五、安装 PHP 以及相关 PHP 组件
+yum install php
+yum install php-mysql
+yum install php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc
+
+我先安装了这几个组件，为以后使用，你要想了解所有的 PHP 组件的话，可以使用如下命令搜索：
+
+yum search php-
+
+六、测试 PHP 是否安装成功
+建立一个 info.php 文件：
+
+vim /var/www/html/info.php
+
+然后输入 i 进入编辑模式，在文件中写入下面的 PHP 命令：
+
+<?php
+phpinfo();
+?>
+
+Esc，退出编辑模式，:wq 保存修改并退出； 
+在浏览器中输入 ip 地址 /info.php，例如：123.56.183.34/info.php 回车，就可以看到 PHP 的信息了；
+
+七、下载 WordPress
+可以到 https://wordpress.org/ 官网上去翻，或通过下面的命令下载：
+
+wget http://cn.wordpress.org/wordpress-3.9-zh_CN.zip
+
+使用 unzip 来解压文件：
+
+unzip wordpress-3.8-zh_CN.zip
+
+如果，没有 unzip 的话，通过下面命令下载：
+
+yum install unzip
+
+安装完毕后，再执行上面的解压命令；
+
+八、把文件复制到 /var/www/html 目录下
+cp -rf wordpress/* /var/www/html/
+
+（注：建议去看看 WordPress 的 wp-conten-sample.php 文件） 
+在浏览器中输入你的 ip 地址，就可以看到 WordPress 的配置页； 
+如何根据其提示，完成最后的配置；
+
+九、安装 FTP
+
+问题总结：
+1. “无法定位 WordPress 内容目录” 
+解决方案： 
+打开 WordPress 根目录的 wp-config.php 文件，把下面这段代码加到文件末尾；
+
+```
+/** Override default file permissions */
+if(is_admin()) {
+  add_filter('filesystem_method', create_function('$a', 'return "direct";' ));
+  define( 'FS_CHMOD_DIR', 0751 );
+}
+```
+
+2. “安装失败，无法创建目录” 
+解决方案： 
+在到 WordPress 的安装路径下找到 wp-content 文件（注：这个文件夹是用于存放语言包，插件及主题的文件夹），键入以下命令：
+
+```
+chmod -R 777 wp-content/
+```
+
+再进行安装或更新，应该就能解决！
