@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/admin" docBase="/usr/local/webserver/tomcat8_0_5_1/webapps/admin.war" reloadable="true">
+</Context>

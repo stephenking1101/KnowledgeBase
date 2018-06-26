@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from classsample.employee import Employee
+from classsample import cli_util
 
 # 定义函数
 def printme( str ):
@@ -40,3 +41,5 @@ except IOError:
     print("不能调用非公有属性!")
 else:
     print("ok!") #现在呢!证明是滴!
+	
+cli_util.run_cmd("echo test > test.log");
