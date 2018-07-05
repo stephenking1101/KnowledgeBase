@@ -576,3 +576,73 @@ public class TestJedis {
         System.out.println("Pipelined@Pool SET: " + ((end - start) / 1000.0) + " seconds");
     }
 }
+
+## restore redis backup dump.rdb
+
+1. ensure the memory is enough
+
+[root@node-1 tmp]# diff /etc/redis/redis0.conf backup.conf
+318c318
+< maxmemory 5gb
+---
+> maxmemory 512mb
+371c371
+< appendonly no
+---
+> appendonly yes
+
+2. restart redis and monitor the recover process
+
+watch redis-cli info Persistence
+
+loading:1
+loading_start_time:1528163126
+loading_total_bytes:1153179911
+loading_loaded_bytes:396361726
+loading_loaded_perc:34.37           << make sure this can reach 100.
+loading_eta_seconds:68
+
+
+When the loading is complete, below log can be seen:
+
+==> redis0.log <==
+[26347] 05 Jun 09:47:12.820 * DB loaded from disk: 106.634 seconds
+[26347] 05 Jun 09:47:12.821 * The server is now ready to accept connections on port 6379
+
+3. check the recovered data
+
+redis-cli keys \*
+
+[root@node-1 redis]# redis-cli info keyspace
+# Keyspace
+db0:keys=2,602,343,expires=0,avg_ttl=0
+[root@node-1 redis]# redis-cli dbsize
+(integer) 2,602,343
+
+4. Redis data migration
+
+```
+wget https://github.com/andymccurdy/redis-py/archive/2.10.6.tar.gz
+tar xf 2.10.6.tar.gz
+python setup.py install
+
+python
+import redis
+
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
+
+# 1.4, ACTIVE_ALARM:ALL -> ACTIVE_ALARM:DD:ALL
+for key in r.keys('ACTIVE_ALARM:[^D]*'):
+  if (not r.rename(key, key.replace('ACTIVE_ALARM:', 'ACTIVE_ALARM:DD:'))): print 'Fail: %s' % key
+
+r.delete('NOTIFICATION:EXPIRED')
+batch_size = 100000
+cur_idx = 0
+keys = r.keys('NOTIFICATION:[^D]*')
+print '%d left to be handled' % len(keys)
+for key in keys:
+  cur_idx += 1
+  if (cur_idx % 5000 == 0): print cur_idx
+  if (cur_idx == batch_size): break
+  if (not r.rename(key, key.replace('NOTIFICATION:', 'NOTIFICATION:DD:'))): print 'Fail: %s' % key
+```
