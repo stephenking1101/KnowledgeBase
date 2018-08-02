@@ -86,3 +86,51 @@ demo3中，id和bucket作为composite的partition key，假设有两行记录：
 Partition Key作为决定记录存放到哪个节点的值，因此CQL的WHERE条件里，必须先给出partition key的所有字段的完整的值，即‘=’条件，才能让cassandra找到那条记录。例如在demo3中，’SELECT *　FROM demo3 where id=’01’ and bucket =’02’’ 包含id和bucket的值的查询才合法，缺一不可。
 
 Clustering column 由于是以它的值作为key排序的，因此可以做equal 和range查询。然而，从demo2看到，这个key是先以cluster1的值开头，因此，WHERE条件里，你可以只限定cluster1的值（等值查询，范围查询都可以）。若想根据cluster2查询，那么必须先给出cluster1的确定值（等值查询）。 例如， ‘SELECT * FROM demo2 WHERE id=’01’ AND cluster1=’a’ AND cluster2=’b’’ ，这样的查询合法；‘SELECT * FROM demo2 WHERE id=’01’ AND cluster2=’b’’ 这样的查询不合法。
+
+
+## Cassandra账号设置
+
+1. 配置文件修改
+
+
+cd apache-cassandra-3.7/conf/
+
+vim cassandra.yaml 
+
+#默认是不需要账号即可访问的
+
+authenticator: PasswordAuthenticator #默认AllowAllAuthenticator 
+
+authorizer: CassandraAuthorizer             #默认AllowAllAuthorizer
+
+'sed -i "s/authenticator: AllowAllAuthenticator/authenticator: PasswordAuthenticator/g" /opt/cassandra/apache-cassandra/conf/cassandra.yaml'
+'sed -i "s/authorizer: AllowAllAuthorizer/authorizer: CassandraAuthorizer/g" /opt/cassandra/apache-cassandra/conf/cassandra.yaml'
+
+重启，令配置生效。
+
+2、设置账号
+
+
+a. 经过前面修改cassandra.yaml 后，authenticator和authorizer的配置会验证访客,默认有个cassandra@cassandra账号
+
+b. 用cassandra@cassandra账号登录
+
+#cqlsh -u cassandra -p cassandra 192.168.30.229
+
+账户类型有两种,一个是superuser,一种是nosuperuser，顾名思义就可以知道是什么意思。
+
+添加一个密码为"111111"的superuser账号ershixiong
+
+cqlsh>CREATE USER ershixiong WITH PASSWORD '111111' SUPERUSER;
+Ctrl+d 退出cqlsh
+用ershixiong账号登录
+#cqlsh -u ershixiong -p 111111 spark129 9042
+删除原有账号cassandra
+cqlsh>drop user cassandra;
+
+c. java使用用户名密码访问cassandra
+
+Cluster cluster = Cluster.builder()
+.addContactPoint("192.168.22.161")
+.withCredentials("myusername", "mypassword")
+.build();

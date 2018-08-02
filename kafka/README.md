@@ -248,4 +248,56 @@ listeners里面指定kafka监听的ip和端口, 如果没有指定ip, 监听所�
 #auto.create.topics.enable=true
 ```
 
+Note: 在kafka安装的机器上必须能ping通advertised.listeners里面指定host_ip
+
 http://kafka.apache.org/documentation.html#configuration
+
+## Kafka docker
+
+下载docker镜像
+zookeeker: docker pull zookeeper:latest
+kafka: docker pull wurstmeister/kafka:latest
+
+创建并启动容器
+先启动zookeeper:
+
+docker run -d --name zookeeper --publish 2181:2181 \
+--volume /etc/localtime:/etc/localtime \
+zookeeper:latest
+zookeeper启动完成后再启动kafka:
+
+docker run -d --name kafka --publish 9092:9092 \
+--link zookeeper \
+--env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \
+--env KAFKA_ADVERTISED_HOST_NAME=kafka所在宿主机的IP \
+--env KAFKA_ADVERTISED_PORT=9092 \
+--volume /etc/localtime:/etc/localtime \
+wurstmeister/kafka:latest
+向kafka发送测试消息
+运行 docker ps，找到kafka的 CONTAINER ID，运行 docker exec -it ${CONTAINER ID} /bin/bash，进入kafka容器。
+进入kafka默认目录 /opt/kafka_2.11-0.10.1.0，运行 bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test，创建一个 topic 名称为 test。
+运行 bin/kafka-topics.sh --list --zookeeper zookeeper:2181 查看当前的 topic 列表。
+运行一个消息生产者，指定 topic 为刚刚创建的 test ， bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test，输入一些测试消息。
+运行一个消息消费者，同样指定 topic 为 test， bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning，可以接收到生产者发送的消息。
+
+kafka docker关键环境变量配置：
+		- name: HOSTNAME_COMMAND
+          value: "ifconfig eth0 | grep 'inet addr' | awk '{ print $2}' | awk -F: '{print $2}'"
+        - name: KAFKA_LISTENERS
+          value: "PLAINTEXT://0.0.0.0:9092"
+        - name: KAFKA_ADVERTISED_LISTENERS
+          value: "PLAINTEXT://_{HOSTNAME_COMMAND}:9092"
+		  
+## K8s Config
+
+先创建service, pod里可以用printenv 获取service的 cluster ip, 变量名为service name + _HOST (e.g. KAFKA_SERVER_SERVICE_HOST=10.0.0.252)
+
+kubectl create -f zookeeper_k8s_deployment.yaml
+kubectl create -f zookeeper_k8s_svc.yaml
+kubectl create -f kafka_k8s_svc.yaml
+kubectl create -f kafka_k8s_deployment.yaml
+
+kubectl delete -f kafka_k8s_deployment.yaml
+kubectl delete -f kafka_k8s_svc.yaml
+kubectl delete -f zookeeper_k8s_deployment.yaml
+kubectl delete -f zookeeper_k8s_svc.yaml

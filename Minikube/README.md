@@ -143,3 +143,28 @@ Commercial support is available at
 $ kubectl logs nginx-app-4028413181-cnt1i
 127.0.0.1 - - [06/Sep/2016:00:27:13 +0000] "GET / HTTP/1.0 " 200 612 "-" "-" "-"
 ```
+
+–Delete (stop)
+
+kubectl delete -f /ci2/config/deploy/k8s-config/config/
+
+–Create (start)
+
+kubectl create -f /ci2/config/deploy/k8s-config/config/
+
+kubectl get namespaces
+
+kubectl config set-context minikube --namespace=ft
+
+kubectl get deployments
+
+kubectl get pods
+
+kubectl get services
+
+kubectl describe pod rba-user-activity-deployment-1709186581-srkl8
+
+docker ps
+docker exec -it xxx bash
+docker cp /root/war.war 67606405f2f2:/var/lib/jetty/deployments/war.war
+docker restart 67606405f2f2
