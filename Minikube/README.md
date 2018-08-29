@@ -14,6 +14,9 @@ Services也是Kubernetes的基本操作单元，是真实应用服务的抽象�
 *Replication Controller:  
 Replication Controller是Kubernete的副本控制器，确保任何时候Kubernetes集群中有指定数量的pod副本(replicas)在运行， 如果少于指定数量的pod副本(replicas)，Replication Controller会启动新的Container，反之会杀死多余的以保证数量不变。Replication Controller使用预先定义的pod模板创建pods。对于利用pod 模板创建的pods，Replication Controller根据label selector来关联。
 
+*Deployment
+Deployment为Pod和ReplicaSet提供了一个声明式定义(declarative)方法，用来替代以前的ReplicationController来方便的管理应用
+
 *Label:  
 Label是一组附加在各类对象上的键值对，是Kubernete中最重要的节点分组方法，用于区分Pod、Service、Replication Controller。每个Pod、Service、 Replication Controller可以有多个label，但是每个label的key只能对应一个value。Labels是Service和Replication Controller运行的基础，Kubernete通过Label来选择正确的容器，将访问Service的请求转发给后端提供服务的多个容器。同样，Replication Controller也使用labels来管理通过pod 模板创建的一组容器。
 
