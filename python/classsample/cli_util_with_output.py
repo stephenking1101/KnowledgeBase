@@ -39,13 +39,17 @@ def run_cmd(cmd):
 
     popen = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, close_fds=True)
 
-    stdout = popen.communicate()
+    #  实时输出 stdout
+    for line in iter(popen.stdout.readline, b''):
+        print(line)  # print to stdout immediately
 
-    status = popen.returncode
+    popen.stdout.close()
+    # 等待子进程结束。设置并返回returncode属性。
+    status = popen.wait()
 
     current_time = time.strftime('%Y-%m-%d-%X', time.localtime())
 
     print(current_time, "Finish running command. Return status: %s" % status)
 
     # 返回一个 tuple类型，来间接达到返回多个值, 也可以写作 return (a, b)
-    return status, stdout
+    return status, popen.stderr

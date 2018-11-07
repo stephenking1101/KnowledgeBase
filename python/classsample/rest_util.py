@@ -86,3 +86,5 @@ if __name__ == "__main__":
     data = '[{"bugid": "12260", "type": "success", "bugname": "firefox"}, {"bugid": "12261", "type": "success", "bugname": "xulrunner"}, {"bugid": "12262", "type": "failed", "bugname": "xulrunner-devel"}]'
     call(data, url)
     request.urlopen('http://www.sina.com.cn')
+    # r = requests.get("http://localhost:9999/helloworld/yourname")
+    # print(r.text)

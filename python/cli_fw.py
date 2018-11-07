@@ -42,7 +42,7 @@ class CliSubCmd(object):
         try:
             (self.options, self.argv) = self.parser.parse_args(args)
         except Exception as e:
-            print e
+            print(e)
             sys.exit(1)
 
     def before_execute(self):
@@ -63,7 +63,7 @@ def confirm(promote_info, option_value=False):
         return True
 
     while True:
-        confirm_input = raw_input('Confirm to %s ? Enter (y)es or (n)o:' % (promote_info))
+        confirm_input = input('Confirm to %s ? Enter (y)es or (n)o:' % (promote_info))
         if confirm_input == 'yes' or confirm_input == 'y':
             return True
         elif confirm_input == 'no' or confirm_input == 'n':
@@ -87,7 +87,7 @@ class CLI_CMD:
         operation_format = '{:' + str(max_action_length + 4) + '}'
         for actionObj in self.actions:
             operations += '    ' + operation_format.format(actionObj.action) + actionObj.description + '\n'
-        print HELP_FORMAT.format(self.cmd_name, operations)
+        print(HELP_FORMAT.format(self.cmd_name, operations))
 
     def get_action(self, action):
         for action_obj in self.actions:
@@ -107,7 +107,7 @@ class CLI_CMD:
         action_obj = self.get_action(action)
 
         if not action_obj:
-            print "Unsupported action: ", action
+            print("Unsupported action: ", action)
             self.print_help()
             sys.exit(1)
 
@@ -125,6 +125,6 @@ class CLI_CMD:
                 sys.exit(-1)
         except Exception as e:
             action_obj.after_throwing('FAILED', e)
-            print '{0} execute FAILED!'.format(action)
-            print e
+            print('{0} execute FAILED!'.format(action))
+            print(e)
             sys.exit(-1)
