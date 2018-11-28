@@ -1,130 +1,66 @@
 #!/usr/bin/python
 
 # -*- coding: utf-8 -*-
-import getpass
-import sys
-from optparse import OptionParser
+import argparse
 
-# constant
-USAGE = "{0} [options] {1}"
+# 创建 ArgumentParser() 对象
+# 调用 add_argument() 方法添加参数
+# 使用 parse_args() 解析添加的参数
+parser = argparse.ArgumentParser()
 
-HELP_FORMAT = """
-Usage: {0} [operation] [options] [args]
+# 定位参数的使用, python cli_fw.py 8
+parser.add_argument("test", help="display a square of a given number", type=int)
 
-Operations:
-{1}
-Use "{0} help [operation]" for more information about a specific operation.
-"""
+# 命令行参数是可选的, python cli_fw.py -h, python cli_fw.py --square 8
+parser.add_argument("--square", help="display a square of a given number", type=int)
+parser.add_argument("--cubic", help="display a cubic of a given number", type=int)
 
-class Status(object):
-    SUCCEEDED = "SUCCEEDED"
-    FAILED = "FAILED"
-    CANCELLED = "CANCELLED"
+args = parser.parse_args()
 
+if args.square:
+    print(args.square ** 2)
 
-class CliSubCmd(object):
-    def __init__(self, action, description, args_description=''):
-        self.action = action
-        self.description = description
-        if args_description:
-            self.args_description = args_description
-        else:
-            self.args_description = ''
-        self.options = {}
-        self.argv = []
-        self.user = getpass.getuser()
-        self.parser = OptionParser(usage=USAGE.format(self.action, self.args_description), add_help_option=True)
+if args.cubic:
+    print(args.cubic ** 3)
 
-    def _set_cmd_name(self, cmd_name):
-        self.parser.set_usage(USAGE.format('%s %s' % (cmd_name, self.action), self.args_description))
+print(args.test ** 2)
 
-    def parse_arguments(self, args=None):
-        try:
-            (self.options, self.argv) = self.parser.parse_args(args)
-        except Exception as e:
-            print(e)
-            sys.exit(1)
+# Difference between --default and --store_const in argparse
+# Here you cannot supply additional value to argument,
+# either argument exist or it doesn't. These type of argument requires action = "store_const" and its value must be
+# supplied in const parameter as shown below. You cannot specify different value.
 
-    def before_execute(self):
-        pass
+# parser = argparse.ArgumentParser()
+# parser.add_argument('--use-cuda', action='store_const', const=False, default=True)
+# parser.parse_args('--use-cuda'.split()) # use-cuda is now False
+# parser.parse_args(''.split()) # use-cuda is now True
+# parser.parse_args('--use-cuda True'.split()) # ERROR: unrecognized arguments: True
 
-    def execute(self):
-        pass
-
-    def after_execute(self, status):
-        pass
-
-    def after_throwing(self, status, e):
-        pass
+# Here you can make the argument default by using default parameter. However you either must commit the argument completely or include it with value as shown below:
+# parser = argparse.ArgumentParser()
+# parser.add_argument('--seed', default=42)
+# parser.parse_args('--seed 20'.split()) # seed is now 20
+# parser.parse_args(''.split()) # seed is now 42
+# parser.parse_args('--seed'.split()) # ERROR, must supply argument value
 
 
-def confirm(promote_info, option_value=False):
-    if option_value:
-        return True
 
-    while True:
-        confirm_input = input('Confirm to %s ? Enter (y)es or (n)o:' % (promote_info))
-        if confirm_input == 'yes' or confirm_input == 'y':
-            return True
-        elif confirm_input == 'no' or confirm_input == 'n':
-            return False
+# parser = argparse.ArgumentParser(description='Process some integers.')
+# parser.add_argument('integers', metavar='N', type=int, nargs='+',
+#                     help='an integer for the accumulator')
+# parser.add_argument('--sum', dest='accumulate', action='store_const',
+#                     const=sum, default=max,
+#                     help='sum the integers (default: find the max)')
+#
+# args = parser.parse_args()
+# print(args.accumulate(args.integers))
 
-class CLI_CMD:
-    def __init__(self, cmd_name):
-        self.cmd_name = cmd_name
-        self.actions = []
-
-    def addSubCli(self, actionObj):
-        actionObj._set_cmd_name(self.cmd_name)
-        self.actions.append(actionObj)
-
-    def print_help(self):
-        operations = ""
-        max_action_length = 0
-        for actionObj in self.actions:
-            if len(actionObj.action) > max_action_length:
-                max_action_length = len(actionObj.action)
-        operation_format = '{:' + str(max_action_length + 4) + '}'
-        for actionObj in self.actions:
-            operations += '    ' + operation_format.format(actionObj.action) + actionObj.description + '\n'
-        print(HELP_FORMAT.format(self.cmd_name, operations))
-
-    def get_action(self, action):
-        for action_obj in self.actions:
-            if action_obj.action == action:
-                return action_obj
-        return None
-
-    def execute(self):
-        """main function"""
-        if len(sys.argv) < 2 or len(sys.argv) == 2 and not self.get_action(sys.argv[1]):
-            self.print_help()
-            sys.exit(1)
-        if len(sys.argv) == 3 and sys.argv[1] == "help":
-            self.get_action(sys.argv[2]).parser.print_help()
-            sys.exit(1)
-        action = sys.argv[1]
-        action_obj = self.get_action(action)
-
-        if not action_obj:
-            print("Unsupported action: ", action)
-            self.print_help()
-            sys.exit(1)
-
-        try:
-            action_obj.parse_arguments()
-            action_obj.before_execute()
-            status = action_obj.execute()
-            action_obj.after_execute(status)
-
-            if type(status) is int:
-                sys.exit(status)
-            elif not status or status.upper().strip() == Status.SUCCEEDED:
-                sys.exit(0)
-            else:
-                sys.exit(-1)
-        except Exception as e:
-            action_obj.after_throwing('FAILED', e)
-            print('{0} execute FAILED!'.format(action))
-            print(e)
-            sys.exit(-1)
+# metavar is used in help messages in a place of an expected argument.
+# action defines how to handle command-line arguments: store it as a constant, append into a list, store a boolean value etc.
+# $ python argparse_usage.py
+# usage: argparse_usage.py [-h] [--sum] N [N ...]
+# argparse_usage.py: error: too few arguments
+# $ python argparse_usage.py 1 2 3 4
+# 4
+# $ python argparse_usage.py 1 2 3 4 --sum
+# 10

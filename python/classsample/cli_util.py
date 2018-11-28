@@ -6,7 +6,7 @@ import time
 #
 # run command and check its status and output
 #
-def run_cmd(cmd):
+def run_cmd(cmd, timeout=None):
     print(time.strftime('%Y-%m-%d-%X', time.localtime()), "Start running command '%s'" % cmd)
 
     # 子进程的文本流控制
@@ -39,7 +39,10 @@ def run_cmd(cmd):
 
     popen = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, close_fds=True)
 
-    stdout = popen.communicate()
+    if timeout is not None:
+        stdout = popen.communicate(timeout=timeout)
+    else:
+        stdout = popen.communicate()
 
     status = popen.returncode
 

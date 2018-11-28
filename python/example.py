@@ -51,7 +51,7 @@ else:
 # 也可写作status, output
 (status, output) = cli_util.run_cmd("echo test > test.log")
 print(output)
-
+cli_util.run_cmd("ping -t 127.0.0.1", 2)
 #################################### 获取键盘输入 ################################################
 age = input("Please intput your age:")
 print(age)
