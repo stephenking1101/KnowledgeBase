@@ -51,10 +51,10 @@ else:
 # 也可写作status, output
 (status, output) = cli_util.run_cmd("echo test > test.log")
 print(output)
-cli_util.run_cmd("ping -t 127.0.0.1", 2)
+# cli_util.run_cmd("ping -t 127.0.0.1", 2)
 #################################### 获取键盘输入 ################################################
-age = input("Please intput your age:")
-print(age)
+# age = input("Please intput your age:")
+# print(age)
 
 #################################### 读取properties文件 ################################################
 from classsample.properties_util import Properties
@@ -84,8 +84,8 @@ for item in addrs:
     print(item)
 
 # 仅获取当前IPV4地址
-print('当前主机IPV4地址为:' + [item[4][0] for item in addrs if ':' not in item[4][0]][0])
-
+print('for循环获取首个当前主机IPV4地址为:' + [item[4][0] for item in addrs if ':' not in item[4][0]][0])  # 由for 循环获取循环变量的列表
+print('for循环获取所有当前主机IPV4地址为:' + ','.join([item[4][0] for item in addrs if ':' not in item[4][0]]))
 # 同上仅获取当前IPV4地址
 for item in addrs:
     if ':' not in item[4][0]:
