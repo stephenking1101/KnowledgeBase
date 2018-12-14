@@ -49,3 +49,35 @@ setup(
     }
 )
 
+# setup.py参数说明
+
+# python setup.py build       # 编译
+# python setup.py install     #安装
+# python setup.py sdist       #生成压缩包(zip/tar.gz)
+# python setup.py bdist_wininst   #生成NT平台安装包(.exe)
+# python setup.py bdist_rpm   #生成rpm包
+
+# 或者直接
+# "bdist 包格式"，格式描述如下：
+
+# python setup.py bdist --help-formats
+# --formats = rpm
+# RPM distribution
+#
+# --formats = gztar
+# gzip'ed tar file
+#
+# --formats = bztar
+# bzip2'ed tar file
+#
+# --formats = ztar
+# compressed tar file
+#
+# --formats = tar
+# tar file
+#
+# --formats = wininst
+# Windows executable installer
+#
+# --formats = zip
+# ZIP file
