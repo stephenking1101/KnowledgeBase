@@ -4,9 +4,11 @@
 from classsample.employee import Employee
 from classsample import cli_util
 
+import sys
+print(sys.argv)
 
 # 定义函数
-def printme(str):
+def printme(str="test"):
     "打印任何传入的字符串"
     print(str);
     return;
@@ -91,3 +93,6 @@ for item in addrs:
     if ':' not in item[4][0]:
         print('当前主机IPV4地址为:' + item[4][0])
 
+
+def main():
+    pass
