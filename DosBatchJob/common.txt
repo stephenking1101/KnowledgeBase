@@ -95,6 +95,42 @@ echo !a!
 )
 pause
 
+FOR /F "eol=; tokens=2,3* delims=, " %i in (myfile.txt) do @echo %i %j %k
+	
+REM	   would parse each line in myfile.txt, ignoring lines that begin with
+REM    a semicolon, passing the 2nd and 3rd token from each line to the for
+REM    body, with tokens delimited by commas and/or spaces.  Notice the for
+REM    body statements reference %i to get the 2nd token, %j to get the
+REM    3rd token, and %k to get all remaining tokens after the 3rd.  For
+REM    file names that contain spaces, you need to quote the filenames with
+REM    double quotes.  In order to use double quotes in this manner, you also
+REM    need to use the usebackq option, otherwise the double quotes will be
+REM    interpreted as defining a literal string to parse.
+REM
+REM    %i is explicitly declared in the for statement and the %j and %k
+REM    are implicitly declared via the tokens= option.  You can specify up
+REM    to 26 tokens via the tokens= line, provided it does not cause an
+REM    attempt to declare a variable higher than the letter 'z' or 'Z'.
+REM    Remember, FOR variables are single-letter, case sensitive, global,
+REM    and you can't have more than 52 total active at any one time.
+	
+@echo off
+setlocal enabledelayedexpansion
+
+FOR /F "usebackq tokens=1,2 delims=," %%i in (".\list.txt") do (
+REM STDIN 0 标准输入 
+REM STDOUT 1 标准输出
+REM STDERR 2 标准错误 
+REM UNDEFINED 3-9 这些句柄由应用程序和各个具体工具单独定义。
+qoperation execute -af .\update_AuxFallenBehindAlert.xml -copyName %%j -storagePolicyName %%i 1>nul
+
+if !ERRORLEVEL! NEQ 0 (
+	echo ERROR: storagePolicyName %%i copyName %%j 更新失败
+) else (
+	echo storagePolicyName %%i copyName %%j 更新成功
+)
+)
+
 REM ##############################################################
 REM #Copy network file. Restart at the break point
 REM ##############################################################
