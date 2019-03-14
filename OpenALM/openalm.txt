@@ -1,0 +1,113 @@
+docker run -ti --name tuleap -e VIRTUAL_HOST=52.83.211.222 -p 8081:80 -p 8443:443 -p 2222:22 -v tuleap-data:/data enalean/tuleap-aio
+docker volume create --name tuleap-data
+docker run -ti --name tuleap -e VIRTUAL_HOST=localhost -p 8082:80 -p 8444:443 -p 2223:22 -v tuleap-data:/data enalean/tuleap-aio
+
+https://52.83.211.222:8443/account/login.php
+
+root@ubuntu:/home/jet# docker search -s 10 tuleap
+        *   Flag --stars has been deprecated, use --filter=stars=3 instead
+        *   NAME                 DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+        *   enalean/tuleap-aio   Tuleap is the #1 Open Source tool for easier…   45                                      [OK]
+root@ubuntu:/home/jet# docker pull enalean/tuleap-aio
+root@ubuntu:/home/jet# docker images enalean/tuleap-aio # 查看是否pull成功
+root@ubuntu:/home/jet# docker volume create --name tuleap-data
+root@ubuntu:/home/jet# docker volume ls
+            *   DRIVER              VOLUME NAME
+            *   local                   tuleap-data
+        *   在主机上会遗留下来孤单的卷。可以使用下面的简单方法来做清理：
+            *   docker volume rm $(docker volume ls -qf dangling=true)
+                *   docker rm -vf web5  # 使用 docker rm -v 命令在删除容器时删除该容器的卷。
+        *   docker volume create --name tuleap-data
+        *   docker run -ti -e VIRTUAL_HOST=localhost -p 80:80 -p 443:443 -p 22:22 -v tuleap-data:/data enalean/tuleap-aio # 提示22端口正在被占用
+root@ubuntu:/home/jet# docker run -ti --name tuleap -e VIRTUAL_HOST=localhost -p 80:80 -p 443:443 -p 2222:22 -v tuleap-data:/data enalean/tuleap-aio
+                *   把22:22端口改成2222:22，这样是可以的！
+        *   docker rm `docker ps -a -q`  # 删除所有的容器
+            *   This is the default index.html page that is distributed with nginx on EPEL. It is located in /usr/share/nginx/html.
+            *   You should now put your content in a location of your choice and edit the root configuration directive in the nginx configuration file /etc/nginx/nginx.conf.
+root@ubuntu:/home/jet# docker exec -ti tuleap cat /data/root/.tuleap_passwd
+            *   jet@ubuntu:~$ docker exec -ti tuleap cat /data/root/.tuleap_passwd
+            *   Mysql user (root) : bVQvpizZ5sSkezt
+            *   Codendiadm unix & DB (codendiadm): C0MZaavWTQd7D98
+            *   Libnss-mysql DB user (dbauthuser): HFIODTdIqXjB6hB
+            *   Site admin password (admin): bRjvx8UDfO5my83
+root@ubuntu:/home/jet# docker exec -ti tuleap /bin/bash# 命令行方式进入容器tuleap(容器名）
+                *   进入容器，mysql -uroot -p(输入上面显示的mysql密码），修改mysql密码为123456 # SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123456');
+                    *   修改密码后，报错：ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/var mysql 启动不了
+                        *   解决方法：
+                            *   service mysqld stop
+                            *   ps -A | grep -i mysql
+                            *   kill 列出来的进程
+                            *   service mysqld start
+        *   [https://localhost](https://localhost) ( ubuntu firefox visit) / [https://192.168.1.249](https://192.168.1.249)( ubuntu服务器外的浏览器访问）
+
+      ![image.png](https://upload-images.jianshu.io/upload_images/10517060-b39ba00cc4c9c85f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+            *   注意： 是https协议，不是 http 协议
+            *   注意使用 https 协议时，要添加到可信任特点，安装证书等。
+                *   进入网页后，修改管理员密码：qq123456@@
+        *   Using docker-compose # inside / outside container ? # no need to do this step !
+            *   $> git clone https://github.com/Enalean/docker-tuleap-aio tuleap-aio $> cd tuleap-aio
+            *   $> export MYSQL_ROOT_PASSWORD=$(cat /dev/urandom | tr -dc "a-zA-Z0-9" | fold -w 15 | head -1)
+            *   $> docker-compose up # 失败： db数据库连接不上
+            *   $> docker-compose exec tuleap cat /data/root/.tuleap_passwd
+    *   [https://tuleap.slack.com/messages/C4A086HEY/convo/C4A086HEY-1518167106.000294/](https://tuleap.slack.com/messages/C4A086HEY/convo/C4A086HEY-1518167106.000294/) # 关于tuleap的问答社区
+    *   [https://hub.docker.com/r/jariasl/tuleap/](https://hub.docker.com/r/jariasl/tuleap/)# 这个docker的操作没问题！！！ # 但是版本太老，9 个月前，建议还是使用tuleap-aio
+        *   root@ubuntu:/home/jet# docker pull jariasl/tuleap
+        *   root@ubuntu:/home/jet# docker volume create --name tuleap-data
+        *   root@ubuntu:/home/jet# docker run --detach --name tuleap -p 80:80 -p 443:443 --env DEFAULT_DOMAIN=localhost --env ORG_NAME="Tuleap" -v tuleap-data:/data jariasl/tuleap
+            *   ea13b62607814bc37e84509bf31d226928735913c9435731981aca6959695494
+        *   root@ubuntu:/home/jet# docker ps
+            *   CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                      NAMES
+            *   ea13b6260781        jariasl/tuleap      "/sbin/docker-wrappe…"   6 seconds ago       Up 5 seconds        0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp   tuleap
+        *   root@ubuntu:/home/jet# docker exec tuleap /bin/bash -c "cat /root/.tuleap_passwd"
+            *   Mysql user (root) : eKkVhBS4gmoOlMc
+            *   Codendiadm unix & DB (codendiadm): 2p8VnXH1guUa6Sw
+            *   Mailman siteadmin: BYobKI0BOtkwS8s
+            *   Libnss-mysql DB user (dbauthuser): KwM8gEvq760O8px
+            *   Site admin password (admin): 1Owb6zRVJZGdzCP # 登录网站管理员使用这个账号和密码
+        *   docker logs -f tuleap
+        *   [http://192.168.1.249](http://192.168.1.249)# 外部使用火狐访问 tuleap 192.168.1.249 、 ubuntu中，使用 localhost 访问
+
+*   Using 808 port is not recommended... either use the 80 port or a port > 1024
+            *   /usr/share/tuleap/src/www/index.php # 默认是访问这个首页
+        *   将容器制作成镜像（以后谁都可以调用）：
+            *   jet@ubuntu:~$ docker login -u happyjetderek [registry.cn-hangzhou.aliyuncs.com](http://registry.cn-hangzhou.aliyuncs.com)
+                *   # 一定不能带-p输入密码，否则报错 # 用户名为阿里云登录的用户名
+                *   Password:
+                    *   # 此处输入密码Registry登录密码（为[https://cr.console.aliyun.com/#/imageList右上角](https://cr.console.aliyun.com/#/imageList右上角)“修改Registry登录密码”出修改的密码）
+                *   Login Succeeded
+            *   docker commit 2553 tuleap-10.0
+                *   2553 为 容器id
+                *   tuleap-10.0为 镜像名
+            *   sudo docker tag b914 registry.cn-hangzhou.aliyuncs.com/cdtest/jet_tuleap:18.05.07
+                *   b914 为tuleap-10.0的镜像id
+            *   sudo docker push registry.cn-hangzhou.aliyuncs.com/cdtest/jet_tuleap:18.05.07
+            *   sudo docker pull [registry.cn-hangzhou.aliyuncs.com/cdtest/jet_tuleap:18.05.07](http://registry.cn-hangzhou.aliyuncs.com/cdtest/jet_tuleap:18.05.07)
+
+     ![image.png](https://upload-images.jianshu.io/upload_images/10517060-0a43432beb4f4ad7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+            *   sudo docker run -ti --name tuleap -e VIRTUAL_HOST=localhost -p 80:80 -p 443:443 -p 2222:22 -v tuleap-data:/data [registry.cn-hangzhou.aliyuncs.com/cdtest/jet_tuleap:18.05.07](http://registry.cn-hangzhou.aliyuncs.com/cdtest/jet_tuleap:18.05.07)
+            *   详细见截图
+
+			
+backup:
+
+docker exec -it tuleap bash
+mysqldump -u codendiadm -p --all-databases > mybackup.sql
+
+tar -czf 20190313.tar.gz /var/lib/docker/volumes/tuleap-data/_data --exclude=mysql.sock
+scp -i /home/centos/ps-alm-ningxia.pem ./20190313.tar.gz centos@192.168.1.168:/tmp
+
+restore:
+docker exec -it tuleap bash
+$ service nginx stop
+$ service httpd stop
+$ service tuleap stop
+-----$ su - gitolite -c "gitolite writable off"
+mysql -u codendiadm -p < mybackup.sql
+/usr/lib/forgeupgrade/bin/forgeupgrade –config=/etc/tuleap/forgeupgrade/config.ini update
+
+tar -xzf 20190313.tar.gz -C /var/lib/docker/volumes/tuleap-data
+mv /var/lib/docker/volumes/tuleap-data/_data_bak/lib/mysql/mysql.sock /var/lib/docker/volumes/tuleap-data/_data/lib/mysql/mysql.sock
