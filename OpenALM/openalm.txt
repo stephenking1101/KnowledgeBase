@@ -1,3 +1,34 @@
+OpenALM Docker运行步骤：
+
+1. 修改docker宿主的hosts文件, 添加域名解释
+xxx.xxx.xxx.xxx tuleap.commvault.com
+
+2. 创建volume
+docker volume create --name tuleap-data
+
+3. 运行image
+docker run -ti --name tuleap -e VIRTUAL_HOST=tuleap.commvault.com -p 80:80 -p 443:443 -p 2222:22 -v tuleap-data:/data enalean/tuleap-aio
+
+停止
+docker stop tuleap
+
+启动
+docker start tuleap
+
+get the site administrator credentials
+docker exec -ti <container_name> cat /data/root/.tuleap_passwd
+
+4. 删除所有container
+docker rm `docker ps -a -q`
+
+5. 删除所有volume
+docker volume rm $(docker volume ls -qf dangling=true)
+
+6. 查看volume的实际路径
+docker volume inspect tuleap-data
+
+docker --help查看docker命令解释
+
 docker run -ti --name tuleap -e VIRTUAL_HOST=52.83.211.222 -p 8081:80 -p 8443:443 -p 2222:22 -v tuleap-data:/data enalean/tuleap-aio
 docker volume create --name tuleap-data
 docker run -ti --name tuleap -e VIRTUAL_HOST=localhost -p 8082:80 -p 8444:443 -p 2223:22 -v tuleap-data:/data enalean/tuleap-aio
@@ -111,3 +142,69 @@ mysql -u codendiadm -p < mybackup.sql
 
 tar -xzf 20190313.tar.gz -C /var/lib/docker/volumes/tuleap-data
 mv /var/lib/docker/volumes/tuleap-data/_data_bak/lib/mysql/mysql.sock /var/lib/docker/volumes/tuleap-data/_data/lib/mysql/mysql.sock
+
+
+
+VIRTUAL_HOST=localhost时的配置
+etc/httpd/conf/httpd.conf:ServerAdmin root@localhost
+etc/httpd/conf/httpd.conf:ServerName localhost
+etc/httpd/conf/httpd.conf.notuleap:ServerAdmin root@localhost
+etc/httpd/conf/httpd.conf.orig:ServerAdmin root@localhost
+etc/httpd/conf.d/ssl.conf.rhel:SSLCertificateFile /etc/pki/tls/certs/localhost.crt
+etc/httpd/conf.d/ssl.conf.rhel:SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+etc/httpd/conf.d/subversion.conf.rhel:# To create a new repository "http://localhost/repos/stuff" using
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerName localhost
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerAlias www.localhost
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerAlias lists.localhost
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerName localhost
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerAlias svn.*.localhost
+etc/tuleap/conf/local.inc:$sys_default_domain = 'localhost';
+etc/tuleap/conf/local.inc:$sys_https_host = 'localhost';
+etc/tuleap/conf/local.inc:$sys_lists_host = 'lists.localhost';
+etc/tuleap/conf/local.inc:$sys_fullname = 'localhost';
+etc/tuleap/conf/local.inc:$sys_email_admin = 'codendi-admin@localhost';
+etc/tuleap/conf/local.inc:$sys_email_contact = 'codendi-contact@localhost';
+etc/tuleap/conf/local.inc:$sys_noreply = '"Tuleap" <noreply@localhost>';
+etc/tuleap/conf/database.inc:$sys_dbhost='localhost';
+etc/tuleap/plugins/git/etc/ssh.config:  Hostname localhost
+etc/nginx/conf.d/tuleap.conf:        server_name  localhost;
+etc/nginx/conf.d/tuleap.conf:        ssl_certificate /etc/pki/tls/certs/localhost.cert.pem;
+etc/nginx/conf.d/tuleap.conf:        ssl_certificate_key /etc/pki/tls/private/localhost.key.pem;
+etc/nginx/conf.d/tuleap.conf:    server_name  localhost;
+etc/nginx/default.d/redirect_tuleap.conf:return 301 https://localhost$request_uri;
+etc/nginx/nginx.conf.default:        server_name  localhost;
+etc/nginx/nginx.conf.default:    #    server_name  localhost;
+home/codendiadm/.gitconfig:     email = codendiadm@localhost
+home/codendiadm/.ssh/config:    Hostname localhost
+
+VIRTUAL_HOST=tuleap.commvault.com时的配置
+lib/gitolite/.gitconfig:        email = gitolite@localhostetc/httpd/conf/httpd.conf:ServerName tuleap.commvault.com
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerName tuleap.commvault.com
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerAlias www.tuleap.commvault.com
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerAlias lists.tuleap.commvault.com
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerName tuleap.commvault.com
+etc/httpd/conf.d/tuleap-vhost.conf:    ServerAlias svn.*.tuleap.commvault.com
+etc/tuleap/conf/local.inc:$sys_default_domain = 'tuleap.commvault.com';
+etc/tuleap/conf/local.inc:$sys_https_host = 'tuleap.commvault.com';
+etc/tuleap/conf/local.inc:$sys_lists_host = 'lists.tuleap.commvault.com';
+etc/tuleap/conf/local.inc:$sys_fullname = 'tuleap.commvault.com';
+etc/tuleap/conf/local.inc:$sys_email_admin = 'codendi-admin@tuleap.commvault.com';
+etc/tuleap/conf/local.inc:$sys_email_contact = 'codendi-contact@tuleap.commvault.com';
+etc/tuleap/conf/local.inc:$sys_noreply = '"Tuleap" <noreply@tuleap.commvault.com>';
+etc/nginx/conf.d/tuleap.conf:        server_name  tuleap.commvault.com;
+etc/nginx/conf.d/tuleap.conf:    server_name  tuleap.commvault.com;
+etc/nginx/default.d/redirect_tuleap.conf:return 301 https://tuleap.commvault.com$request_uri;
+etc/httpd/conf/httpd.conf:ServerAdmin root@localhost
+etc/httpd/conf/httpd.conf.notuleap:ServerAdmin root@localhost
+etc/httpd/conf/httpd.conf.orig:ServerAdmin root@localhost
+etc/httpd/conf.d/ssl.conf.rhel:SSLCertificateFile /etc/pki/tls/certs/localhost.crt
+etc/httpd/conf.d/ssl.conf.rhel:SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+etc/httpd/conf.d/subversion.conf.rhel:# To create a new repository "http://localhost/repos/stuff" using
+etc/tuleap/conf/database.inc:$sys_dbhost='localhost';
+etc/tuleap/plugins/git/etc/ssh.config:  Hostname localhost
+etc/nginx/conf.d/tuleap.conf:        ssl_certificate /etc/pki/tls/certs/localhost.cert.pem;
+etc/nginx/conf.d/tuleap.conf:        ssl_certificate_key /etc/pki/tls/private/localhost.key.pem;
+etc/nginx/nginx.conf.default:        server_name  localhost;
+etc/nginx/nginx.conf.default:    #    server_name  localhost;
+home/codendiadm/.gitconfig:     email = codendiadm@localhost
+home/codendiadm/.ssh/config:    Hostname localhost
