@@ -53,6 +53,28 @@ p     - paste
 
 u     - undo the previous operation 
 
+vi操作
+
+1.跳到文本的最后一行：按“G”,即“shift+g”
+
+2.跳到最后一行的最后一个字符 ： 先重复1的操作即按“G”，之后按“$”键，即“shift+4”。
+
+3.跳到第一行的第一个字符：先按两次“g”，
+
+4.跳转到当前行的第一个字符：在当前行按“0”。
+
+5.vi加密。进入vi，输入":" + "X" 之后就提示你输入两次密码。
+
+6.文件重新载入 :e!
+
+7.单行复制 将光标移到复制行 按 'yy'进行复制
+
+8.多行复制 将光标移到复制首行 按 'nyy'进行复制 n=1.2.3.4。。。。。
+
+9.粘贴 将光标移到粘贴行 按 'p'进行粘贴
+
+10.查找 /pattern Enter
+
 
 uptime (check the system up running time since when, # user connecting) 
 
@@ -83,7 +105,7 @@ Ctrl-f      Move cursor forward one character; same as the right arrow key.
 Ctrl-b      Move cursor backward one character; same as the left arrow key. 
 Alt-f       Move cursor forward one word. 
 Alt-b       Move cursor backward one word. 
-Ctrl-l      Clear the screen and move the cursor to the 
+Ctrl-l      Clear the screen and move the cursor to the beginning of the screen == clear
 Ctrl-d      Delete the character at the cursor location 
 Ctrl-t      Transpose (exchange) the character at the cursor location with the one preceding it. 
 Alt-t       Transpose the word at the cursor location with the one preceding it. 
@@ -542,3 +564,23 @@ File Conditionals	Description
 -u	True if the user id is set on a file
 -w	True if the file is writable
 -x	True if the file is an executable
+
+使用while循环结合read命令逐行读取文件内容：
+#!/bin/bash
+if [ $# -ne 1 ];then
+ echo "Usage:$0 filename"
+ exit 1
+fi
+file=$1
+if [ ! -f $file ];then
+ echo "the $file is not a file"
+ exit 2
+fi
+count=0
+while read line   #使用read命令循环读取文件内容，并将读取的文件内容赋值给变量line
+do
+  let count++
+  echo "$count $line"
+done <$file      #“done <$file”将整个while循环的标准输入指向文件$file
+echo -e "\ntotle $count lines read"
+exit 0
