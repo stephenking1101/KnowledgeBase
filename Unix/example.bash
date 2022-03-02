@@ -45,3 +45,23 @@ function while_read_bottm(){
 
 while_read_bottom
 mark_status_maintenance "${arr[*]}"
+
+oracle_check(){
+	ps -ef | grep pmon_$sInstance | grep -v grep > /dev/null 2>/dev/null; iRc_T=$?
+	if [ "${iRc_T}" != "0" ];then
+		let sStatus+=1
+		sStr=$sStr"[error]: instance $sInstance not exist\n"
+	else
+		su - oracle -c "export ORACLE_SID=$sInstance && sqlplus / as sysdba | grep -i $sDatabase" << EOF > /dev/null 2>&1; iRc_T=$?
+		select name from v\$database;
+		exit;
+		EOF
+		
+		if [ "${iRc_T}" != "0" ];then
+			let sStatus+=1
+			sStr=$sStr"[error]: database $sDatabase not exist\n"
+		fi
+	fi
+}
+
+oracle_check
